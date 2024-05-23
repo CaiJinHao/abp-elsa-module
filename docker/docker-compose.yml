@@ -21,6 +21,6 @@ services:
       ConnectionStrings__Default: "Server=db;Database=workflowapp;User Id=sa;Password=<YourStrong!Passw0rd>;TrustServerCertificate=true;"
       Elsa__Server__BaseUrl: "http://localhost:8080"
     # volumes:
-    #   - ./appsettings.json:/app/appsettings.json 
+    #   - ./appsettings.json:/app/appsettings.json
     depends_on:
       - db

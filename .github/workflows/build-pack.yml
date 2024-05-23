@@ -70,7 +70,7 @@ jobs:
       - name: Version check and generate
         run: |
           gitci release changes --output ./changeslog.md
-          gitci version next --format json --output ./version.json --build-ver "${{env.GITHUB_SHA_SHORT}}" 
+          gitci version next --format json --output ./version.json --build-ver "${{env.GITHUB_SHA_SHORT}}"
           ls ./
 
       - id: changes
@@ -120,12 +120,14 @@ jobs:
           # build
           cd ${{github.workspace}}/docker
           docker build -t "${{vars.DOCKER_IMAGE_NAME}}:${{env.GITCI_NEXT_VERSION_MAJOR}}.${{env.GITCI_NEXT_VERSION_MINOR}}.${{env.GITCI_NEXT_VERSION_PATCH}}" .
+          docker build -t "${{vars.DOCKER_IMAGE_NAME}}:${{env.GITCI_NEXT_VERSION_MAJOR}}.${{env.GITCI_NEXT_VERSION_MINOR}}.latest" .
 
       - name: Docker publish
         if: ${{ env.PUSH_DOCKER == 'true' }}
         run: |
           docker login -u ${{vars.DOCKER_USER_NAME}} -p ${{secrets.DOCKER_USER_AK}}
           docker push "${{vars.DOCKER_IMAGE_NAME}}:${{env.GITCI_NEXT_VERSION_MAJOR}}.${{env.GITCI_NEXT_VERSION_MINOR}}.${{env.GITCI_NEXT_VERSION_PATCH}}"
+          docker push "${{vars.DOCKER_IMAGE_NAME}}:${{env.GITCI_NEXT_VERSION_MAJOR}}.${{env.GITCI_NEXT_VERSION_MINOR}}.latest"
 
       - name: Push dotnet package
         #if: steps.changes.outputs.src == 'true'

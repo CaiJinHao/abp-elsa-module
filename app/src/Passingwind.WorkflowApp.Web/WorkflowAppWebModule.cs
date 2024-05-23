@@ -156,7 +156,12 @@ public class WorkflowAppWebModule : AbpModule
             return settings;
         };
 
-        Configure<AbpAntiForgeryOptions>(options => options.AutoValidate = true);
+        Configure<AbpAntiForgeryOptions>(options =>
+        {
+            options.AutoValidate = true;
+            options.TokenCookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+            options.TokenCookie.SameSite = SameSiteMode.Lax;
+        });
 
         Configure<AbpClockOptions>(options => options.Kind = DateTimeKind.Utc);
 
@@ -471,16 +476,17 @@ public class WorkflowAppWebModule : AbpModule
             app.UseDeveloperExceptionPage();
         }
 
+        app.UseForwardedHeaders();
+
         app.UseCors();
 
         app.UseResponseCompression();
 
-        // app.UseStatusCodePages();
-
-        app.UseForwardedHeaders();
         app.UseOwlRequestLocalization();
 
         app.UseCorrelationId();
+
+        app.UseCookiePolicy();
 
         app.UseHealthChecks("/health-check");
 

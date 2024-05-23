@@ -2,22 +2,22 @@
 
 ## Prerequisites
 
-- SqlServer 2012+
-- Redis (optional)
+-   SqlServer 2012+
+-   Redis (optional)
 
 ## Configurations
 
 See [appsettings.json](../app/src/Passingwind.WorkflowApp.Web/appsettings.json) file
 
 All config can be convert from environment variables
-> https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-7.0#naming-of-environment-variables
 
+> https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-7.0#naming-of-environment-variables
 
 ## Docker compose example
 
 [docker-compose.yml](./docker-compose.yml)
 
-``` shell
+```shell
 version: '3.8'
 
 services:
@@ -30,8 +30,8 @@ services:
       ACCEPT_EULA: Y
       MSSQL_SA_PASSWORD: <YourStrong!Passw0rd>
       MSSQL_PID: Express
-      
-  app: 
+
+  app:
     image: passingwind/abp-elsa-app
     restart: unless-stopped
     ports:
@@ -41,7 +41,7 @@ services:
       ConnectionStrings__Default: "Server=db;Database=workflowapp;User Id=sa;Password=<YourStrong!Passw0rd>;TrustServerCertificate=true;"
       Elsa__Server__BaseUrl: "http://localhost:8080"
     # volumes:
-    #   - ./appsettings.json:/app/appsettings.json 
+    #   - ./appsettings.json:/app/appsettings.json
     depends_on:
       - db
 ```

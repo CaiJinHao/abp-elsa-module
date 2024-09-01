@@ -177,6 +177,9 @@ export default {
     'page.instance.delete.confirm.title': 'Are you sure to delete this instance?',
     'page.instance.delete.confirm.content': 'This operation will delete the instance.',
     'page.instance.general': 'General',
+    'page.instance.cleanup': 'Cleanup',
+    'page.instance.cleanup.confirm.content': 'Do you want to start cleaning up instance data?',
+    'page.instance.cleanup.confirm.success': 'The cleanup job is running',
     'page.instance.graph': 'Graph',
     'page.instance.activityState': 'Activity State',
     'page.instance.timeline': 'Timeline',
@@ -283,4 +286,10 @@ export default {
     'page.globalCode.field.latestVersion': 'Latest Version',
     'page.globalCode.save': 'Save',
     'page.globalCode.publish': 'Publish',
+
+    'page.workflow.settings.cleanup': 'Cleanup',
+    'page.workflow.settings.cleanup.enabled': 'Enabled',
+    'page.workflow.settings.cleanup.keepDays': 'Keep Days',
+    'page.workflow.settings.cleanup.scopes': 'Cleanup Scopes',
+    'page.workflow.settings.cleanup.scopeAll': 'Cleanup All',
 };

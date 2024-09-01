@@ -171,6 +171,9 @@ export default {
     'page.instance.delete.confirm.title': '您确定要删除此实例吗？',
     'page.instance.delete.confirm.content': '此操作将删除实例。',
     'page.instance.general': '基本信息',
+    'page.instance.cleanup': '清理',
+    'page.instance.cleanup.confirm.content': '您是否要开始清理实例数据？',
+    'page.instance.cleanup.confirm.success': '清理作业正在运行',
     'page.instance.graph': '视图',
     'page.instance.activityState': '节点状态',
     'page.instance.timeline': '时间线',
@@ -277,4 +280,10 @@ export default {
     'page.globalCode.field.latestVersion': '最新版本',
     'page.globalCode.save': '保存',
     'page.globalCode.publish': '发布',
+
+    'page.workflow.settings.cleanup': '清理',
+    'page.workflow.settings.cleanup.enabled': '启用',
+    'page.workflow.settings.cleanup.keepDays': '保留天数',
+    'page.workflow.settings.cleanup.scopes': '清理范围',
+    'page.workflow.settings.cleanup.scopeAll': '清理全部',
 };

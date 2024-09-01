@@ -107,6 +107,12 @@
                 access: 'ElsaWorkflow.WorkflowGroups',
             },
             {
+                path: '/workflows/settings',
+                name: 'Settings',
+                component: './workflow/settings',
+                access: 'ElsaWorkflow.Settings',
+            },
+            {
                 component: './404',
             },
         ],

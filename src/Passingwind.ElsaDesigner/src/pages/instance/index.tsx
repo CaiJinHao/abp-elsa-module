@@ -6,6 +6,7 @@ import {
     workflowInstanceBatchCancel,
     workflowInstanceBatchRetry,
     workflowInstanceCancel,
+    workflowInstanceCleanup,
     workflowInstanceRetry,
 } from '@/services/WorkflowInstance';
 import { WorkflowInstanceStatus } from '@/services/enums';
@@ -32,6 +33,28 @@ const Index: React.FC = () => {
     const [tableQueryConfig, setTableQueryConfig] = useState<GlobalAPI.TableQueryConfig>();
     const [tableSelectedRowKeys, setTableSelectedRowKeys] = useState<React.Key[]>();
     const [tableSelectedRows, setTableSelectedRows] = useState<API.WorkflowInstance[]>([]);
+
+    const hanleCleanup = () => {
+        Modal.confirm({
+            title: intl.formatMessage({
+                id: 'page.instance.cleanup',
+            }),
+            content: intl.formatMessage({
+                id: 'page.instance.cleanup.confirm.content',
+            }),
+            onOk: async () => {
+                const result = await workflowInstanceCleanup();
+                if (result?.response.ok) {
+                    message.success(
+                        intl.formatMessage({
+                            id: 'page.instance.cleanup.confirm.success',
+                        }),
+                    );
+                }
+                return result?.response.ok;
+            },
+        });
+    };
 
     useEffect(() => {
         const tableQueryConfig = getTableQueryConfig('workflow_instances') ?? {};
@@ -297,6 +320,13 @@ const Index: React.FC = () => {
                         setTableSelectedRowKeys(selectedRowKeys);
                     },
                 }}
+                toolBarRender={() => [
+                    access['ElsaWorkflow.Instances.Cleanup'] && (
+                        <Button key="cleanup" danger type="default" onClick={hanleCleanup}>
+                            {intl.formatMessage({ id: 'page.instance.cleanup' })}
+                        </Button>
+                    ),
+                ]}
                 tableAlertOptionRender={({ selectedRowKeys, _, onCleanSelected }) => {
                     // issue 'selectedRows' wil be lost the new values.
                     return (

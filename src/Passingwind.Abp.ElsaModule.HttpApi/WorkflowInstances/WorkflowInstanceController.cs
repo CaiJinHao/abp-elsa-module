@@ -44,6 +44,12 @@ public class WorkflowInstanceController : ElsaModuleController, IWorkflowInstanc
         return _service.CancelAsync(id);
     }
 
+    [HttpPost("cleanup")]
+    public Task CleanupAsync()
+    {
+        return _service.CleanupAsync();
+    }
+
     [HttpDelete("{id}")]
     public Task DeleteAsync(Guid id)
     {

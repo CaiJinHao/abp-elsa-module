@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Elsa.Services;
 using Elsa.Services.WorkflowStorage;
 using Microsoft.AspNetCore.Authorization;
+using Passingwind.Abp.ElsaModule.Cleanup;
 using Passingwind.Abp.ElsaModule.Common;
 using Passingwind.Abp.ElsaModule.Permissions;
 using Passingwind.Abp.ElsaModule.Stores;
@@ -34,6 +35,7 @@ public class WorkflowInstanceAppService : ElsaModuleAppService, IWorkflowInstanc
     private readonly IDistributedCache<WorkflowInstanceStatusCountStatisticsResultDto> _workflowInstanceStatusCountStatisticsDistributedCache;
     private readonly IWorkflowPermissionProvider _workflowPermissionProvider;
     private readonly IWorkflowDefinitionVersionRepository _workflowDefinitionVersionRepository;
+    private readonly ICleanupRunner _cleanupRunner;
 
     public WorkflowInstanceAppService(
         IJsonSerializer jsonSerializer,
@@ -48,7 +50,8 @@ public class WorkflowInstanceAppService : ElsaModuleAppService, IWorkflowInstanc
         IDistributedCache<WorkflowInstanceDateCountStatisticsResultDto> workflowInstanceDateCountStatisticsDistributedCache,
         IDistributedCache<WorkflowInstanceStatusCountStatisticsResultDto> workflowInstanceStatusCountStatisticsDistributedCache,
         IWorkflowPermissionProvider workflowPermissionProvider,
-        IWorkflowDefinitionVersionRepository workflowDefinitionVersionRepository)
+        IWorkflowDefinitionVersionRepository workflowDefinitionVersionRepository,
+        ICleanupRunner cleanupRunner)
     {
         _jsonSerializer = jsonSerializer;
         _workflowInstanceRepository = workflowInstanceRepository;
@@ -63,6 +66,7 @@ public class WorkflowInstanceAppService : ElsaModuleAppService, IWorkflowInstanc
         _workflowInstanceStatusCountStatisticsDistributedCache = workflowInstanceStatusCountStatisticsDistributedCache;
         _workflowPermissionProvider = workflowPermissionProvider;
         _workflowDefinitionVersionRepository = workflowDefinitionVersionRepository;
+        _cleanupRunner = cleanupRunner;
     }
 
     [Authorize(Policy = ElsaModulePermissions.Instances.Action)]
@@ -189,10 +193,14 @@ public class WorkflowInstanceAppService : ElsaModuleAppService, IWorkflowInstanc
             version: input.Version,
             status: input.WorkflowStatus,
             correlationId: input.CorrelationId,
-            creationTimes: input.CreationTimes,
-            lastExecutedTimes: input.LastExecutedTimes,
-            finishedTimes: input.FinishedTimes,
-            faultedTimes: input.FaultedTimes);
+            minCreationTime: input.CreationTimes?.Length >= 1 ? input.CreationTimes[0] : null,
+            maxCreationTime: input.CreationTimes?.Length == 2 ? input.CreationTimes[1] : null,
+            minLastExecutedTime: input.LastExecutedTimes?.Length >= 1 ? input.LastExecutedTimes[0] : null,
+            maxLastExecutedTime: input.LastExecutedTimes?.Length == 2 ? input.LastExecutedTimes[1] : null,
+            minFinishedTime: input.FinishedTimes?.Length >= 1 ? input.FinishedTimes[0] : null,
+            maxFinishedTime: input.FinishedTimes?.Length == 2 ? input.FinishedTimes[1] : null,
+            minFaultedTime: input.FaultedTimes?.Length >= 1 ? input.FaultedTimes[0] : null,
+            maxFaultedTime: input.FaultedTimes?.Length == 2 ? input.FaultedTimes[1] : null);
 
         var list = await _workflowInstanceRepository.GetPagedListAsync(
             input.SkipCount,
@@ -203,10 +211,14 @@ public class WorkflowInstanceAppService : ElsaModuleAppService, IWorkflowInstanc
             version: input.Version,
             status: input.WorkflowStatus,
             correlationId: input.CorrelationId,
-            creationTimes: input.CreationTimes,
-            lastExecutedTimes: input.LastExecutedTimes,
-            finishedTimes: input.FinishedTimes,
-            faultedTimes: input.FaultedTimes);
+            minCreationTime: input.CreationTimes?.Length >= 1 ? input.CreationTimes[0] : null,
+            maxCreationTime: input.CreationTimes?.Length == 2 ? input.CreationTimes[1] : null,
+            minLastExecutedTime: input.LastExecutedTimes?.Length >= 1 ? input.LastExecutedTimes[0] : null,
+            maxLastExecutedTime: input.LastExecutedTimes?.Length == 2 ? input.LastExecutedTimes[1] : null,
+            minFinishedTime: input.FinishedTimes?.Length >= 1 ? input.FinishedTimes[0] : null,
+            maxFinishedTime: input.FinishedTimes?.Length == 2 ? input.FinishedTimes[1] : null,
+            minFaultedTime: input.FaultedTimes?.Length >= 1 ? input.FaultedTimes[0] : null,
+            maxFaultedTime: input.FaultedTimes?.Length == 2 ? input.FaultedTimes[1] : null);
 
         return new PagedResultDto<WorkflowInstanceBasicDto>(count, ObjectMapper.Map<List<WorkflowInstance>, List<WorkflowInstanceBasicDto>>(list));
     }
@@ -223,7 +235,7 @@ public class WorkflowInstanceAppService : ElsaModuleAppService, IWorkflowInstanc
     [Authorize(Policy = ElsaModulePermissions.Instances.Delete)]
     public async Task BatchDeleteAsync(WorkflowInstanceBatchActionRequestDto input)
     {
-        if (input?.Ids?.Any() == true)
+        if (input?.Ids?.Length > 0)
         {
             foreach (var id in input.Ids)
             {
@@ -294,7 +306,9 @@ public class WorkflowInstanceAppService : ElsaModuleAppService, IWorkflowInstanc
     {
         var datePeriod = input.DatePeriod ?? 30;
         if (datePeriod <= 0)
+        {
             throw new ArgumentOutOfRangeException("datePeriod must > 0");
+        }
 
         double tz = input.Tz;
 
@@ -382,7 +396,7 @@ public class WorkflowInstanceAppService : ElsaModuleAppService, IWorkflowInstanc
     {
         // TODO check permissions
 
-        if (input?.Ids?.Any() == true)
+        if (input?.Ids?.Length > 0)
         {
             foreach (var id in input.Ids)
             {
@@ -396,7 +410,7 @@ public class WorkflowInstanceAppService : ElsaModuleAppService, IWorkflowInstanc
     {
         // TODO check permissions
 
-        if (input?.Ids?.Any() == true)
+        if (input?.Ids?.Length > 0)
         {
             foreach (var id in input.Ids)
             {
@@ -458,5 +472,11 @@ public class WorkflowInstanceAppService : ElsaModuleAppService, IWorkflowInstanc
         var dto = ObjectMapper.Map<WorkflowDefinitionVersion, WorkflowDefinitionVersionDto>(version);
         dto.Definition = ObjectMapper.Map<WorkflowDefinition, WorkflowDefinitionDto>(definition);
         return dto;
+    }
+
+    [Authorize(Policy = ElsaModulePermissions.Instances.Cleanup)]
+    public async Task CleanupAsync()
+    {
+        await _cleanupRunner.RunAsync(true);
     }
 }

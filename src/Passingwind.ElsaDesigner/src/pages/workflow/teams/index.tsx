@@ -302,10 +302,8 @@ const Index: React.FC = () => {
                     name="description"
                     label={intl.formatMessage({ id: 'page.workflowTeam.field.description' })}
                 />
-            </ModalForm>;
-            {
-                /* settings */
-            }
+            </ModalForm>
+            {/* settings */}
             <Modal
                 open={settingsModalVisible}
                 onCancel={() => setSettingsModalVisible(false)}
@@ -448,7 +446,7 @@ const Index: React.FC = () => {
                     }
                 />
                 {/*  */}
-            </Modal>;
+            </Modal>
             {/* role scope form */}
             <ModalForm<{ roleName: string; workflowIds: string[] }>
                 visible={roleScopeModalVisible}

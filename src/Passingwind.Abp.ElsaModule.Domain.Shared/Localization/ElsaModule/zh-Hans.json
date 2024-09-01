@@ -14,6 +14,7 @@
     "Permission:Instance.Acton": "操作",
     "Permission:Instance.Statistic": "统计",
     "Permission:Instance.Data": "查看详细数据",
+    "Permission:Instance.Cleanup": "清理",
 
     "Permission:Definition": "定义管理",
     "Permission:Definition.Publish": "保存或发布",
@@ -25,6 +26,11 @@
     "Permission:GlobalVariables": "全局变量管理",
 
     "Permission:WorkflowTeams": "团队管理",
-    "Permission:WorkflowTeams.ManagePermissions": "权限管理"
+    "Permission:WorkflowTeams.ManagePermissions": "权限管理",
+
+    "Permission:WorkflowGroups": "工作流分组管理",
+    "Permission:GlobalCodes": "全局代码管理",
+    "Permission:Settings": "设置管理",
+    "Permission:Settings.InstanceCleanup": "实例清理"
   }
 }

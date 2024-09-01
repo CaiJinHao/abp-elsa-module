@@ -125,7 +125,7 @@ public abstract class Store<TModel, TEntity, TKey> : ITransientDependency where 
 
         if (entity == null)
         {
-            Logger.LogWarning("The {0} entity was not found.", typeof(TModel));
+            Logger.LogWarning($"The {typeof(TModel)} entity was not found.");
             return default;
         }
 

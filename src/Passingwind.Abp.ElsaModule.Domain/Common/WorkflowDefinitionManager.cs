@@ -66,8 +66,7 @@ public class WorkflowDefinitionManager : DomainService
 
     public virtual Task<WorkflowDefinitionVersion> CreateDefinitionVersionAsync(Guid definitionId, Guid? tenantId, List<Activity> activities, List<ActivityConnection> connections)
     {
-        if (activities == null)
-            throw new ArgumentNullException(nameof(activities));
+        ArgumentNullException.ThrowIfNull(activities);
 
         var entity = new WorkflowDefinitionVersion(definitionId, tenantId, activities, connections);
 
@@ -87,8 +86,7 @@ public class WorkflowDefinitionManager : DomainService
         Dictionary<string, object> variables,
         Dictionary<string, object> customAttributes)
     {
-        if (entity == null)
-            throw new ArgumentNullException(nameof(entity));
+        ArgumentNullException.ThrowIfNull(entity);
 
         entity.DisplayName = displayName;
         entity.Channel = channel;

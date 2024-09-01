@@ -5,9 +5,9 @@ using Microsoft.Extensions.Hosting;
 
 namespace Passingwind.Abp.ElsaModule.HttpApi.Client.ConsoleTestApp;
 
-class Program
+internal static class Program
 {
-    static async Task Main(string[] args)
+    private static async Task Main(string[] args)
     {
         await CreateHostBuilder(args).RunConsoleAsync();
     }
@@ -15,8 +15,5 @@ class Program
     public static IHostBuilder CreateHostBuilder(string[] args) =>
         Host.CreateDefaultBuilder(args)
             .AddAppSettingsSecretsJson()
-            .ConfigureServices((hostContext, services) =>
-            {
-                services.AddHostedService<ConsoleTestAppHostedService>();
-            });
+            .ConfigureServices((hostContext, services) => services.AddHostedService<ConsoleTestAppHostedService>());
 }

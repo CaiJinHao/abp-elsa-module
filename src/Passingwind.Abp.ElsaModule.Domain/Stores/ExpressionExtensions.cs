@@ -41,7 +41,7 @@ public static class ExpressionExtensions
         return Expression.Lambda<TTo>(body, newParams);
     }
 
-    private static ParameterExpression[] GenerateParameterMap<TFrom>(Expression<TFrom> from, IReadOnlyDictionary<Type, Type> typeMap, IDictionary<Expression, Expression> parameterMap) where TFrom : class
+    private static ParameterExpression[] GenerateParameterMap<TFrom>(Expression<TFrom> from, Dictionary<Type, Type> typeMap, IDictionary<Expression, Expression> parameterMap) where TFrom : class
     {
         var newParams = new ParameterExpression[from.Parameters.Count];
 
@@ -54,7 +54,7 @@ public static class ExpressionExtensions
         return newParams;
     }
 
-    private class TypeConversionVisitor<T> : ExpressionVisitor
+    private sealed class TypeConversionVisitor<T> : ExpressionVisitor
     {
         private readonly Dictionary<Expression, Expression> _parameterMap;
 

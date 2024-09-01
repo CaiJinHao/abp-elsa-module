@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-#nullable disable
-
 namespace Demo.Migrations;
 
 public partial class Update_GlobalVariable_2 : Migration

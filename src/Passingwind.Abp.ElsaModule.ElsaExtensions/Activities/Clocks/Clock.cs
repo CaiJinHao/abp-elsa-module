@@ -30,7 +30,7 @@ public class Clock : Activity
         return Execute();
     }
 
-    private IActivityExecutionResult Execute()
+    private OutcomeResult Execute()
     {
         Output = new ClockOutputModel
         {

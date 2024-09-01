@@ -19,7 +19,7 @@ public class CurrentUser : Activity
     [ActivityOutput(Hint = "The current user info.")]
     public CurrentUserOutputModel Output { get; set; }
 
-    public readonly ICurrentUser _currentUser;
+    private readonly ICurrentUser _currentUser;
 
     public CurrentUser(ICurrentUser currentUser)
     {
@@ -31,7 +31,7 @@ public class CurrentUser : Activity
         return Execute();
     }
 
-    private IActivityExecutionResult Execute()
+    private OutcomeResult Execute()
     {
         Output = new CurrentUserOutputModel()
         {

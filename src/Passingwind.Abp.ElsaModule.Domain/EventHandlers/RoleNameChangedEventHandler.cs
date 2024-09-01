@@ -6,11 +6,11 @@ using Volo.Abp.Identity;
 
 namespace Passingwind.Abp.ElsaModule.EventHandlers;
 
-public class RoleNameChangedEventHandler : IDistributedEventHandler<IdentityRoleNameChangedEto>, ITransientDependency
+public class RoleNameChangedHandler : IDistributedEventHandler<IdentityRoleNameChangedEto>, ITransientDependency
 {
     protected IWorkflowTeamRepository WorkflowTeamRepository { get; }
 
-    public RoleNameChangedEventHandler(IWorkflowTeamRepository workflowTeamRepository)
+    public RoleNameChangedHandler(IWorkflowTeamRepository workflowTeamRepository)
     {
         WorkflowTeamRepository = workflowTeamRepository;
     }

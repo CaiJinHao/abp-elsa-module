@@ -66,7 +66,7 @@ public class GlobalCodeRepository : EfCoreRepository<ElsaModuleDbContext, Global
         var dbset = await GetDbSetAsync();
 
         return await dbset
-            .WhereIf(excludeIds?.Any() == true, x => !excludeIds.Contains(x.Id))
+            .WhereIf(excludeIds?.Length > 0, x => !excludeIds.Contains(x.Id))
             .AnyAsync(x => x.Name == name, cancellationToken: cancellationToken);
     }
 }

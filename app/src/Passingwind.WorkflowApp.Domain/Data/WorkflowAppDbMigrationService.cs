@@ -52,7 +52,7 @@ public class WorkflowAppDbMigrationService : ITransientDependency
         await MigrateDatabaseSchemaAsync();
         await SeedDataAsync();
 
-        Logger.LogInformation($"Successfully completed host database migrations.");
+        Logger.LogInformation("Successfully completed host database migrations.");
 
         var tenants = await _tenantRepository.GetListAsync(includeDetails: true);
 
@@ -64,8 +64,8 @@ public class WorkflowAppDbMigrationService : ITransientDependency
                 if (tenant.ConnectionStrings.Any())
                 {
                     var tenantConnectionStrings = tenant.ConnectionStrings
-                        .Select(x => x.Value)
-                        .ToList();
+                        .ConvertAll(x => x.Value)
+;
 
                     if (!migratedDatabaseSchemas.IsSupersetOf(tenantConnectionStrings))
                     {
@@ -127,10 +127,8 @@ public class WorkflowAppDbMigrationService : ITransientDependency
                 AddInitialMigration();
                 return true;
             }
-            else
-            {
-                return false;
-            }
+
+            return false;
         }
         catch (Exception e)
         {
@@ -208,7 +206,7 @@ public class WorkflowAppDbMigrationService : ITransientDependency
         {
             currentDirectory = Directory.GetParent(currentDirectory.FullName);
 
-            if (Directory.GetFiles(currentDirectory.FullName).FirstOrDefault(f => f.EndsWith(".sln")) != null)
+            if (Directory.GetFiles(currentDirectory.FullName).Any(f => f.EndsWith(".sln")))
             {
                 return currentDirectory.FullName;
             }

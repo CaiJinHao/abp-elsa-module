@@ -48,8 +48,7 @@ public class SetCache : Activity
 
     protected override async ValueTask<IActivityExecutionResult> OnExecuteAsync(ActivityExecutionContext context)
     {
-        if (string.IsNullOrEmpty(Key))
-            throw new ArgumentNullException(nameof(Key));
+        ArgumentException.ThrowIfNullOrWhiteSpace(Key);
 
         var options = new DistributedCacheEntryOptions();
 

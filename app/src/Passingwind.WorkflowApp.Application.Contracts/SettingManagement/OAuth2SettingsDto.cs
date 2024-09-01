@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Passingwind.WorkflowApp.SettingManagement;
+﻿namespace Passingwind.WorkflowApp.SettingManagement;
 public class OAuth2SettingsDto
 {
     public bool Enabled { get; set; }

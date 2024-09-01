@@ -19,6 +19,6 @@ public class WorkflowIdFilterSpecification : Specification<WorkflowDefinition>
     {
         if (Ids?.Any() == true)
             return x => Ids.Contains(x.Id);
-        return x => true;
+        return _ => true;
     }
 }

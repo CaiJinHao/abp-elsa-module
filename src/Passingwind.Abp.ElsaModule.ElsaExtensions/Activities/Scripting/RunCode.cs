@@ -121,7 +121,7 @@ public class RunCode : Activity, IRuntimeSelectListProvider, IActivityPropertyOp
 
             Output = await _javaScriptService.EvaluateAsync(codeContent, returnType, context, ConfigureEngine, context.CancellationToken);
         }
-        else if (entity.Language == GlobalCodeLanguage.Javascript)
+        else if (entity.Language == GlobalCodeLanguage.CSharp)
         {
             void configureGlobal(CSharpScriptEvaluationGlobal c)
             {

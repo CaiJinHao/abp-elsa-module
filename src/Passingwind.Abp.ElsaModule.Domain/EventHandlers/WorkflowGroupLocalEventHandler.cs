@@ -8,7 +8,7 @@ using Volo.Abp.Uow;
 
 namespace Passingwind.Abp.ElsaModule.EventHandlers;
 
-public class WorkflowGroupLocalEventHandler :
+public class WorkflowGroupChangedHandler :
     ILocalEventHandler<WorkflowGroupNameChangedEvent>,
     ILocalEventHandler<EntityDeletedEventData<WorkflowGroup>>,
     ITransientDependency,
@@ -16,7 +16,7 @@ public class WorkflowGroupLocalEventHandler :
 {
     private readonly IWorkflowDefinitionRepository _workflowDefinitionRepository;
 
-    public WorkflowGroupLocalEventHandler(IWorkflowDefinitionRepository workflowDefinitionRepository)
+    public WorkflowGroupChangedHandler(IWorkflowDefinitionRepository workflowDefinitionRepository)
     {
         _workflowDefinitionRepository = workflowDefinitionRepository;
     }

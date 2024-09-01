@@ -20,9 +20,11 @@ public class CSharpScriptHostTests : ElsaModuleExtensionTestBase
     [Fact]
     public async Task CompileTest1()
     {
-        const string code = @"using System;
+        const string code = """
+using System;
 
-Console.WriteLine(""Hello, World!"");"
+Console.WriteLine("Hello, World!");
+"""
 ;
         var result = await _cSharpScriptHost.CompileAsync(new CSharpScriptCompileContext(_logger, code));
 
@@ -32,8 +34,10 @@ Console.WriteLine(""Hello, World!"");"
     [Fact]
     public async Task CompileTest2()
     {
-        const string code = @" 
-Console.WriteLine(""Hello, World!"");"
+        const string code = """
+ 
+Console.WriteLine("Hello, World!");
+"""
 ;
         var result = await _cSharpScriptHost.CompileAsync(new CSharpScriptCompileContext(_logger, code));
 
@@ -43,12 +47,14 @@ Console.WriteLine(""Hello, World!"");"
     [Fact]
     public async Task CompileTest3()
     {
-        const string code = @" 
-#r ""nuget: Newtonsoft.Json, 13.0.3""
+        const string code = """
+ 
+#r "nuget: Newtonsoft.Json, 13.0.3"
 
 Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(new { a = 1 }));
 
-"
+
+"""
 ;
         var result = await _cSharpScriptHost.CompileAsync(new CSharpScriptCompileContext(_logger, code));
 
@@ -58,13 +64,14 @@ Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(new { a = 1 }));
     [Fact]
     public async Task CompileTest4()
     {
-        const string code = @" 
-#r ""System.Private.Uri""
+        const string code = """
+ 
+#r "System.Private.Uri"
 
 using System.IO;
 using System.Net;
 
-var url = ""https://download.microsoft.com/download/4/C/8/4C830C0C-101F-4BF2-8FCB-32D9A8BA906A/Import_User_Sample_en.csv"";
+var url = "https://download.microsoft.com/download/4/C/8/4C830C0C-101F-4BF2-8FCB-32D9A8BA906A/Import_User_Sample_en.csv";
 var request = WebRequest.Create(url);
 var response = request.GetResponse();
 var dataStream = response.GetResponseStream();
@@ -84,7 +91,8 @@ var users = csv.Split('\n').Skip(1)
 
 foreach (var u in users)
      Console.WriteLine(u);
-"
+
+"""
 ;
         var result = await _cSharpScriptHost.CompileAsync(new CSharpScriptCompileContext(_logger, code));
 
@@ -94,13 +102,14 @@ foreach (var u in users)
     [Fact]
     public async Task RunTest1()
     {
-        const string code = @" 
-#r ""System.Private.Uri""
+        const string code = """
+ 
+#r "System.Private.Uri"
 
 using System.IO;
 using System.Net;
 
-var url = ""https://download.microsoft.com/download/4/C/8/4C830C0C-101F-4BF2-8FCB-32D9A8BA906A/Import_User_Sample_en.csv"";
+var url = "https://download.microsoft.com/download/4/C/8/4C830C0C-101F-4BF2-8FCB-32D9A8BA906A/Import_User_Sample_en.csv";
 var request = WebRequest.Create(url);
 var response = request.GetResponse();
 var dataStream = response.GetResponseStream();
@@ -120,7 +129,8 @@ var users = csv.Split('\n').Skip(1)
 
 foreach (var u in users)
      Console.WriteLine(u);
-"
+
+"""
 ;
         var _ = await _cSharpScriptHost.RunAsync(new CSharpScriptCompileContext(_logger, code));
     }
@@ -128,12 +138,14 @@ foreach (var u in users)
     [Fact]
     public async Task RunTest2()
     {
-        const string code = @" 
-#r ""nuget: Newtonsoft.Json, 13.0.3""
+        const string code = """
+ 
+#r "nuget: Newtonsoft.Json, 13.0.3"
 
 return Newtonsoft.Json.JsonConvert.SerializeObject(new { a = 1 });
 
-"
+
+"""
 ;
         var result = await _cSharpScriptHost.RunAsync(new CSharpScriptCompileContext(_logger, code));
 

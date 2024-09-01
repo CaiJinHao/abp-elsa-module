@@ -33,10 +33,7 @@ public class WorkflowAppDomainSharedModule : AbpModule
 
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
-        Configure<AbpVirtualFileSystemOptions>(options =>
-        {
-            options.FileSets.AddEmbedded<WorkflowAppDomainSharedModule>();
-        });
+        Configure<AbpVirtualFileSystemOptions>(options => options.FileSets.AddEmbedded<WorkflowAppDomainSharedModule>());
 
         Configure<AbpLocalizationOptions>(options =>
         {
@@ -48,9 +45,6 @@ public class WorkflowAppDomainSharedModule : AbpModule
             options.DefaultResourceType = typeof(WorkflowAppResource);
         });
 
-        Configure<AbpExceptionLocalizationOptions>(options =>
-        {
-            options.MapCodeNamespace("WorkflowApp", typeof(WorkflowAppResource));
-        });
+        Configure<AbpExceptionLocalizationOptions>(options => options.MapCodeNamespace("WorkflowApp", typeof(WorkflowAppResource)));
     }
 }

@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Threading;
 using System.Threading.Tasks;
 using Passingwind.Abp.ElsaModule.Permissions;
+using Volo.Abp.Authorization;
 using Volo.Abp.Guids;
 using Volo.Abp.MultiTenancy;
 
@@ -50,17 +50,17 @@ public class WorkflowImporter : IWorkflowImporter
             // check permssion
             if (!await _workflowPermissionService.IsGrantedAsync(workflow.Id, ElsaModulePermissions.Definitions.Import, cancellationToken))
             {
-                throw new Exception($"Workflow '{name}' unauthorized access.");
+                throw new AbpAuthorizationException($"Workflow '{name}' unauthorized access.");
             }
 
             if (!overwrite)
             {
-                throw new Exception($"Workflow '{name}' already exists.");
+                throw new AbpAuthorizationException($"Workflow '{name}' already exists.");
             }
 
             if (workflow.PublishedVersion > version)
             {
-                throw new Exception($"Workflow '{name}' import version '{version}' less then current version '{workflow.PublishedVersion}'.");
+                throw new AbpAuthorizationException($"Workflow '{name}' import version '{version}' less then current version '{workflow.PublishedVersion}'.");
             }
         }
 

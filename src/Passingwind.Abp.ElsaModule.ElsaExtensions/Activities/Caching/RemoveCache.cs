@@ -35,8 +35,7 @@ public class RemoveCache : Activity
 
     public override async ValueTask<IActivityExecutionResult> ExecuteAsync(ActivityExecutionContext context)
     {
-        if (string.IsNullOrEmpty(Key))
-            throw new ArgumentNullException(nameof(Key));
+        ArgumentException.ThrowIfNullOrWhiteSpace(Key);
 
         await _distributedCache.RemoveAsync(Key, token: context.CancellationToken);
 

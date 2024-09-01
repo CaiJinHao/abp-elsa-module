@@ -109,9 +109,9 @@ public static class ElsaModuleDbContextModelCreatingExtensions
 
                 b.Property(x => x.Input).HasConversion(new EfCoreJsonValueConverter<Elsa.Services.Models.WorkflowInputReference>(), ValueComparer.CreateDefault(typeof(Elsa.Services.Models.WorkflowInputReference), false));
                 b.Property(x => x.Output).HasConversion(new EfCoreJsonValueConverter<Elsa.Services.Models.WorkflowOutputReference>(), ValueComparer.CreateDefault(typeof(Elsa.Services.Models.WorkflowOutputReference), false));
-#pragma warning disable CS0612 // Type or member is obsolete
+#pragma warning disable CS0618 // Type or member is obsolete
                 b.Property(x => x.Fault).HasConversion(new EfCoreJsonValueConverter<Elsa.Models.WorkflowFault>(), ValueComparer.CreateDefault(typeof(Elsa.Models.WorkflowFault), false));
-#pragma warning restore CS0612 // Type or member is obsolete
+#pragma warning restore CS0618 // Type or member is obsolete
                 b.Property(x => x.CurrentActivity).HasConversion(new EfCoreJsonValueConverter<WorkflowInstanceScheduledActivity>(), ValueComparer.CreateDefault(typeof(WorkflowInstanceScheduledActivity), false));
 
                 //b.Property(x => x.ScheduledActivities).HasConversion(new ElsaEFJsonValueConverter<List<Elsa.Models.ScheduledActivity>>(), ValueComparer.CreateDefault(typeof(List<Elsa.Models.ScheduledActivity>), false));

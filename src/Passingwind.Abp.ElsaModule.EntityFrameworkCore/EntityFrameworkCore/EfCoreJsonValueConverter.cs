@@ -13,7 +13,11 @@ namespace Passingwind.Abp.ElsaModule.EntityFrameworkCore;
 
 public class EfCoreJsonValueConverter<TModel> : ValueConverter<TModel, string>
 {
+#pragma warning disable CA2211 // Non-constant fields should not be visible
+#pragma warning disable RCS1158 // Static member in generic type should use a type parameter
     public static Func<JsonSerializerSettings> CreateSettingsFunc;
+#pragma warning restore RCS1158 // Static member in generic type should use a type parameter
+#pragma warning restore CA2211 // Non-constant fields should not be visible
 
     static EfCoreJsonValueConverter()
     {

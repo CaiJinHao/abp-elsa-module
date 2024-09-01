@@ -1,7 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Query;
-
-namespace Passingwind.Abp.ElsaModule.EntityFrameworkCore;
+﻿namespace Passingwind.Abp.ElsaModule.EntityFrameworkCore;
 
 public static class EfCoreExtensions
 {

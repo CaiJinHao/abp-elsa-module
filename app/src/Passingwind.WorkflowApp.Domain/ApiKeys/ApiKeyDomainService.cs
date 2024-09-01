@@ -43,10 +43,9 @@ public class ApiKeyDomainService : DomainService
                 return apiKey.UserId;
             }
         }
-        else
+        else if (Guid.TryParse(userIdString, out Guid userId2))
         {
-            if (Guid.TryParse(userIdString, out Guid userId2))
-                return userId2;
+            return userId2;
         }
 
         return null;

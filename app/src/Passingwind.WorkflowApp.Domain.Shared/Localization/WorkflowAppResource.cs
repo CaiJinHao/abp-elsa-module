@@ -5,5 +5,4 @@ namespace Passingwind.WorkflowApp.Localization;
 [LocalizationResourceName("WorkflowApp")]
 public class WorkflowAppResource
 {
-
 }

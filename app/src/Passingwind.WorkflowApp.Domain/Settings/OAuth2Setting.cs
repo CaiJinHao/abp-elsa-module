@@ -1,5 +1,5 @@
 ﻿namespace Passingwind.WorkflowApp.Settings;
-public class OAuth2Setting
+public static class OAuth2Setting
 {
     private const string Prefix = "OAuth2";
 

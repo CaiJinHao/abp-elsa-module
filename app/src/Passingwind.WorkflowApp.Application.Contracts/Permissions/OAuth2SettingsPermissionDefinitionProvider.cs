@@ -11,10 +11,7 @@ public class OAuth2SettingsPermissionDefinitionProvider : PermissionDefinitionPr
     {
         var settings = context.GetGroupOrNull(SettingManagementPermissions.GroupName);
 
-        if (settings != null)
-        {
-            settings.AddPermission(OAuth2SettingsPermissions.OAuth2, L("Permission:OAuth2"));
-        }
+        settings?.AddPermission(OAuth2SettingsPermissions.OAuth2, L("Permission:OAuth2"));
     }
 
     private static LocalizableString L(string name)

@@ -72,7 +72,7 @@ public class GlobalCodeRepository : MongoDbRepository<ElsaModuleMongoDbContext, 
         var query = await GetMongoQueryableAsync();
 
         return await query
-            .WhereIf(excludeIds?.Any() == true, x => !excludeIds.Contains(x.Id))
+            .WhereIf(excludeIds?.Length > 0, x => !excludeIds.Contains(x.Id))
             .As<IMongoQueryable<GlobalCode>>()
             .AnyAsync(x => x.Name == name, cancellationToken: cancellationToken);
     }

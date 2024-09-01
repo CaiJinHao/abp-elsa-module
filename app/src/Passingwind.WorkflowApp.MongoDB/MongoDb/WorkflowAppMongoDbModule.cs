@@ -27,14 +27,8 @@ public class WorkflowAppMongoDbModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
-        context.Services.AddMongoDbContext<WorkflowAppMongoDbContext>(options =>
-        {
-            options.AddDefaultRepositories();
-        });
+        context.Services.AddMongoDbContext<WorkflowAppMongoDbContext>(options => options.AddDefaultRepositories());
 
-        Configure<AbpUnitOfWorkDefaultOptions>(options =>
-        {
-            options.TransactionBehavior = UnitOfWorkTransactionBehavior.Disabled;
-        });
+        Configure<AbpUnitOfWorkDefaultOptions>(options => options.TransactionBehavior = UnitOfWorkTransactionBehavior.Disabled);
     }
 }

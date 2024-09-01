@@ -1,4 +1,5 @@
-﻿using Elsa.ActivityResults;
+﻿using System;
+using Elsa.ActivityResults;
 using Elsa.Attributes;
 using Elsa.Expressions;
 using Elsa.Services;
@@ -20,7 +21,7 @@ public class Cancel : Activity
         var message = Message ?? "Custom canceled";
         context.JournalData.Add("Error", message);
 
-        context.WorkflowExecutionContext.Cancel(new System.Exception("Custom canceled."), message, context.ActivityBlueprint.Id, context.Input, context.Resuming);
+        context.WorkflowExecutionContext.Cancel(new OperationCanceledException("Custom canceled."), message, context.ActivityBlueprint.Id, context.Input, context.Resuming);
 
         return Noop();
     }

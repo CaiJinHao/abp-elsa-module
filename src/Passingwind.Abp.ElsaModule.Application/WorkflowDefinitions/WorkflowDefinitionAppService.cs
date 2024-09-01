@@ -586,7 +586,7 @@ public class WorkflowDefinitionAppService : ElsaModuleAppService, IWorkflowDefin
 
             ZipFile.CreateFromDirectory(exportTempDir, zipFilePath);
 
-            Logger.LogInformation("Workflow definition export zip file created: {0}", zipFilePath);
+            Logger.LogInformation("Workflow definition export zip file created: {ZipFilePath}", zipFilePath);
 
             return new RemoteStreamContent(File.OpenRead(zipFilePath), $"{DateTime.UtcNow:yyyyMMddHHmmss}.zip", "application/stream");
         }
@@ -599,8 +599,10 @@ public class WorkflowDefinitionAppService : ElsaModuleAppService, IWorkflowDefin
     [Authorize(Policy = ElsaModulePermissions.Definitions.Import)]
     public async Task<WorkflowDefinitionImportResultDto> ImportAsync(WorkflowDefinitionImportRequestDto input)
     {
-        if (input.File?.ContentLength == 0)
-            throw new ArgumentNullException(nameof(input.File));
+        ArgumentNullException.ThrowIfNull(input);
+        ArgumentNullException.ThrowIfNull(input.File);
+        ArgumentNullException.ThrowIfNull(input.File.ContentLength);
+        ArgumentOutOfRangeException.ThrowIfLessThan(input.File.ContentLength.Value, 0, nameof(input.File));
 
         var randomName = Path.GetFileNameWithoutExtension(Path.GetTempFileName());
         var zipFilePath = Path.Combine(Path.GetTempPath(), "workflow", "import", $"{randomName}.zip");

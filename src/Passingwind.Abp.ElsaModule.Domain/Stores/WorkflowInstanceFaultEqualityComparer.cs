@@ -23,7 +23,7 @@ public class WorkflowInstanceFaultEqualityComparer : IEqualityComparer<WorkflowI
         return HashCode.Combine(obj.FaultedActivityId);
     }
 
-    new public bool Equals(object x, object y)
+    public new bool Equals(object x, object y)
     {
         if (x == y)
         {

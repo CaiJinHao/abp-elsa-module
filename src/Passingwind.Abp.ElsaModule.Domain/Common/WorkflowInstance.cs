@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Elsa.Models;
 using Elsa.Services.Models;
@@ -49,7 +49,7 @@ public class WorkflowInstance : FullAuditedAggregateRoot<Guid>, IMultiTenant
 
     public WorkflowOutputReference Output { get; set; }
 
-    [Obsolete]
+    [Obsolete("Use Faults")]
     public WorkflowFault Fault { get; set; }
 
     public WorkflowInstanceScheduledActivity CurrentActivity { get; set; }

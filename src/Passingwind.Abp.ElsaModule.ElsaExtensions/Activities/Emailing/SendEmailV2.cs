@@ -117,7 +117,7 @@ public class SendEmailV2 : Activity, IActivityPropertyOptionsProvider, IRuntimeS
         if (!string.IsNullOrEmpty(From))
             message.From = new MailAddress(From);
 
-        if (OtherEmails?.Any() == true)
+        if (OtherEmails?.Count > 0)
         {
             foreach (var item in OtherEmails)
             {
@@ -125,7 +125,7 @@ public class SendEmailV2 : Activity, IActivityPropertyOptionsProvider, IRuntimeS
             }
         }
 
-        if (ToUsers?.Any() == true)
+        if (ToUsers?.Count > 0)
         {
             foreach (var item in ToUsers)
             {
@@ -135,7 +135,7 @@ public class SendEmailV2 : Activity, IActivityPropertyOptionsProvider, IRuntimeS
             }
         }
 
-        if (ToRoles?.Any() == true)
+        if (ToRoles?.Count > 0)
         {
             foreach (var item in ToRoles)
             {

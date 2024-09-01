@@ -40,7 +40,7 @@ public class ReadConfiguration : Activity
         return Execute();
     }
 
-    private IActivityExecutionResult Execute()
+    private OutcomeResult Execute()
     {
         if (string.IsNullOrEmpty(Key))
             throw new ArgumentNullException(nameof(Key));

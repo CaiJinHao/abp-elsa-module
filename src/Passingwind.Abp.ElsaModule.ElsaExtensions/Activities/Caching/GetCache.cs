@@ -38,8 +38,7 @@ public class GetCache : Activity
 
     protected override async ValueTask<IActivityExecutionResult> OnExecuteAsync(ActivityExecutionContext context)
     {
-        if (string.IsNullOrEmpty(Key))
-            throw new ArgumentNullException(nameof(Key));
+        ArgumentException.ThrowIfNullOrWhiteSpace(Key);
 
         var result = await _distributedCache.GetAsync(Key, token: context.CancellationToken);
 

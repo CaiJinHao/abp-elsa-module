@@ -62,26 +62,25 @@ public class WorkflowAppDbContext :
 
     public DbSet<ApiKey> ApiKeys { get; set; }
 
-
     public WorkflowAppDbContext(DbContextOptions<WorkflowAppDbContext> options)
         : base(options)
     {
     }
 
-    protected override void OnModelCreating(ModelBuilder builder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        base.OnModelCreating(builder);
+        base.OnModelCreating(modelBuilder);
 
         /* Include modules to your migration db context */
 
-        builder.ConfigurePermissionManagement();
-        builder.ConfigureSettingManagement();
-        builder.ConfigureBackgroundJobs();
-        builder.ConfigureAuditLogging();
-        builder.ConfigureIdentity();
-        builder.ConfigureFeatureManagement();
-        builder.ConfigureTenantManagement();
-        builder.ConfigureElsaModule();
+        modelBuilder.ConfigurePermissionManagement();
+        modelBuilder.ConfigureSettingManagement();
+        modelBuilder.ConfigureBackgroundJobs();
+        modelBuilder.ConfigureAuditLogging();
+        modelBuilder.ConfigureIdentity();
+        modelBuilder.ConfigureFeatureManagement();
+        modelBuilder.ConfigureTenantManagement();
+        modelBuilder.ConfigureElsaModule();
 
         /* Configure your own tables/entities inside here */
 
@@ -92,7 +91,7 @@ public class WorkflowAppDbContext :
         //    //...
         //});
 
-        builder.Entity<ApiKey>(b =>
+        modelBuilder.Entity<ApiKey>(b =>
         {
             b.ToTable(WorkflowAppConsts.DbTablePrefix + "ApiKeys", WorkflowAppConsts.DbSchema);
             b.ConfigureByConvention();

@@ -5,7 +5,7 @@ namespace Passingwind.Abp.ElsaModule.MongoDB;
 
 public class MongoDbFixture : IDisposable
 {
-    private static readonly MongoDbRunner MongoDbRunner;
+    public static readonly MongoDbRunner MongoDbRunner;
     public static readonly string ConnectionString;
 
     static MongoDbFixture()
@@ -14,7 +14,9 @@ public class MongoDbFixture : IDisposable
         ConnectionString = MongoDbRunner.ConnectionString;
     }
 
+#pragma warning disable CA1816 // Dispose methods should call SuppressFinalize
     public void Dispose()
+#pragma warning restore CA1816 // Dispose methods should call SuppressFinalize
     {
         MongoDbRunner?.Dispose();
     }

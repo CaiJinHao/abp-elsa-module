@@ -305,10 +305,7 @@ public class WorkflowInstanceAppService : ElsaModuleAppService, IWorkflowInstanc
     public async Task<WorkflowInstanceDateCountStatisticsResultDto> GetStatusDateCountStatisticsAsync(WorkflowInstanceDateCountStatisticsRequestDto input)
     {
         var datePeriod = input.DatePeriod ?? 30;
-        if (datePeriod <= 0)
-        {
-            throw new ArgumentOutOfRangeException("datePeriod must > 0");
-        }
+        ArgumentOutOfRangeException.ThrowIfLessThan(datePeriod, 0, nameof(input.DatePeriod));
 
         double tz = input.Tz;
 

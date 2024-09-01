@@ -9,7 +9,7 @@ using Volo.Abp.Uow;
 
 namespace Passingwind.Abp.ElsaModule.EventHandlers;
 
-public class WorkflowTeamEventHandler :
+public class WorkflowTeamChangedHandler :
     ILocalEventHandler<EntityCreatedEventData<WorkflowTeam>>,
     ILocalEventHandler<EntityUpdatedEventData<WorkflowTeam>>,
     ILocalEventHandler<EntityDeletedEventData<WorkflowTeam>>,
@@ -19,7 +19,7 @@ public class WorkflowTeamEventHandler :
     private readonly PermissionManager _permissionManager;
     private readonly IWorkflowTeamManager _workflowTeamManager;
 
-    public WorkflowTeamEventHandler(PermissionManager permissionManager, IWorkflowTeamManager workflowTeamManager)
+    public WorkflowTeamChangedHandler(PermissionManager permissionManager, IWorkflowTeamManager workflowTeamManager)
     {
         _permissionManager = permissionManager;
         _workflowTeamManager = workflowTeamManager;

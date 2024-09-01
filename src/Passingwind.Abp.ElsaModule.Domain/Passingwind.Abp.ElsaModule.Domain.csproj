@@ -3,7 +3,7 @@
     <Import Project="..\..\common.props" />
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <RootNamespace>Passingwind.Abp.ElsaModule</RootNamespace>
     </PropertyGroup>
 
@@ -22,7 +22,7 @@
     <ItemGroup>
         <PackageReference Include="Elsa" Version="$(ElsaVersion)" />
         <!--overwrite-->
-        <PackageReference Include="Rebus.ServiceProvider" Version="10.1.0" />
+        <PackageReference Include="Rebus.ServiceProvider" Version="10.1.2" />
         <PackageReference Include="Rebus.Microsoft.Extensions.Logging" Version="5.0.0" />
     </ItemGroup>
 

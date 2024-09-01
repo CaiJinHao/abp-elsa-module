@@ -15,7 +15,7 @@
 
     <ItemGroup>
         <PackageReference Include="Elsa.Abstractions" Version="$(ElsaVersion)" />
-        <PackageReference Include="NodaTime.Serialization.SystemTextJson" Version="1.1.2" />
+        <PackageReference Include="NodaTime.Serialization.SystemTextJson" Version="1.2.0" />
     </ItemGroup>
 
 </Project>

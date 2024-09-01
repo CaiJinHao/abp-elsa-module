@@ -4,7 +4,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Passingwind.WorkflowApp.Data;
-using Serilog;
 using Volo.Abp;
 
 namespace Passingwind.WorkflowApp.DbMigrator;
@@ -26,7 +25,6 @@ public class DbMigratorHostedService : IHostedService
         {
             options.Services.ReplaceConfiguration(_configuration);
             options.UseAutofac();
-            options.Services.AddLogging(c => c.AddSerilog());
         }))
         {
             await application.InitializeAsync();

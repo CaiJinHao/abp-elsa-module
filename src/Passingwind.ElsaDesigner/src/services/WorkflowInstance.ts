@@ -1,7 +1,7 @@
 ﻿/**
  * Generate from url: https://localhost:44345/swagger/v1/swagger.json
  * It is recommended not to modify the document
- * Total count: 19
+ * Total count: 20
  **/
 // @ts-ignore
 /* eslint-disable */
@@ -257,6 +257,19 @@ export async function workflowInstanceCancel(
     options?: { [key: string]: any }
 ) {
     return request<any>(`/api/elsa/workflow/instances/${id}/cancel`, {
+        method: 'POST',
+        getResponse: true,
+        ...(options || {}),
+    });
+}
+
+/**
+ * *TODO* POST /api/elsa/workflow/instances/cleanup 
+ **/
+export async function workflowInstanceCleanup(
+    options?: { [key: string]: any }
+) {
+    return request<any>(`/api/elsa/workflow/instances/cleanup`, {
         method: 'POST',
         getResponse: true,
         ...(options || {}),

@@ -40,4 +40,6 @@ public interface IWorkflowInstanceAppService : IApplicationService
     Task<PagedResultDto<WorkflowDefinitionBasicDto>> GetAssignableDefinitionAsync(WorkflowDefinitionListRequestDto input);
 
     Task<WorkflowDefinitionVersionDto> GetDefinitionAsync(Guid id);
+
+    Task CleanupAsync();
 }

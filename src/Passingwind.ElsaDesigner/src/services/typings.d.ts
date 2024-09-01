@@ -1,7 +1,7 @@
 ﻿/**
  * Generate from url: https://localhost:44345/swagger/v1/swagger.json
  * It is recommended not to modify the document
- * Total count: 218
+ * Total count: 219
  **/
 import * as Enum from "./enums";
 
@@ -309,6 +309,16 @@ declare namespace API {
     type ChangePasswordInput = {
         currentPassword?: string | undefined;
         newPassword: string;
+    };
+
+    /**
+     * *TODO*
+     **/
+    type CleanupSettings = {
+        enabled?: boolean | undefined;
+        keepDays: number;
+        scopeAll?: boolean | undefined;
+        scopes?: number[] | undefined;
     };
 
     /**
@@ -688,6 +698,8 @@ declare namespace API {
         publishedVersion: number;
         tenantId?: string | undefined;
         content?: string | undefined;
+        languageDescription?: string | undefined;
+        typeDescription?: string | undefined;
     };
 
     /**
@@ -827,9 +839,11 @@ declare namespace API {
         phoneNumberConfirmed?: boolean | undefined;
         isActive?: boolean | undefined;
         lockoutEnabled?: boolean | undefined;
+        accessFailedCount: number;
         lockoutEnd?: string | undefined;
         concurrencyStamp?: string | undefined;
         entityVersion: number;
+        lastPasswordChangeTime?: string | undefined;
     };
 
     /**
@@ -1472,6 +1486,8 @@ declare namespace API {
         isSZArray?: boolean | undefined;
         isVariableBoundArray?: boolean | undefined;
         isByRefLike?: boolean | undefined;
+        isFunctionPointer?: boolean | undefined;
+        isUnmanagedFunctionPointer?: boolean | undefined;
         hasElementType?: boolean | undefined;
         genericTypeArguments?: any[] | undefined;
         genericParameterPosition: number;
@@ -1561,6 +1577,8 @@ declare namespace API {
         isSZArray?: boolean | undefined;
         isVariableBoundArray?: boolean | undefined;
         isByRefLike?: boolean | undefined;
+        isFunctionPointer?: boolean | undefined;
+        isUnmanagedFunctionPointer?: boolean | undefined;
         hasElementType?: boolean | undefined;
         genericTypeArguments?: any[] | undefined;
         genericParameterPosition: number;
@@ -1671,6 +1689,7 @@ declare namespace API {
         emailConfirmed?: boolean | undefined;
         phoneNumber?: string | undefined;
         phoneNumberConfirmed?: boolean | undefined;
+        extraProperties?: any | undefined;
     };
 
     /**
@@ -1756,8 +1775,8 @@ declare namespace API {
         groupName?: string | undefined;
         persistenceBehavior: Enum.WorkflowPersistenceBehavior;
         contextOptions: WorkflowContextOptions;
-        variables?: any | undefined;
         customAttributes?: any | undefined;
+        variables?: any | undefined;
     };
 
     /**

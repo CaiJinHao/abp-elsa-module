@@ -4,7 +4,10 @@ public static class ElsaModuleSettings
 {
     public const string GroupName = "ElsaModule";
 
-    /* Add constants for setting names. Example:
-     * public const string MySettingName = GroupName + ".MySettingName";
-     */
+    public static class InstanceCleanup
+    {
+        public const string Enabled = "Enabled";
+        public const string KeepDays = "KeepDays";
+        public const string Scopes = "Scopes";
+    }
 }

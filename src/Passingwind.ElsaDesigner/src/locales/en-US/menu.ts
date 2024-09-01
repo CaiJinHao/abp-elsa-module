@@ -64,6 +64,7 @@ export default {
     'menu.Workflows.GlobalCode': 'Global Codes',
     'menu.Workflows.GlobalCode.create': 'Create',
     'menu.Workflows.GlobalCode.edit': 'Edit',
+    'menu.Workflows.Settings': 'Settings',
     //
     'menu.Change Password': 'Change Password',
     'menu.system': 'System',

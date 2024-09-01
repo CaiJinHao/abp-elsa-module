@@ -14,6 +14,7 @@
     "Permission:Instance.Acton": "Acton",
     "Permission:Instance.Statistic": "Statistic",
     "Permission:Instance.Data": "View data",
+    "Permission:Instance.Cleanup": "Cleanup",
 
     "Permission:Definition": "Definition management",
     "Permission:Definition.Publish": "Create or publish",
@@ -24,7 +25,12 @@
 
     "Permission:GlobalVariables": "Global variables management",
 
-    "Permission:WorkflowTeams": "Workflow Teams Management",
-    "Permission:WorkflowTeams.ManagePermissions": "Manage permissions"
+    "Permission:WorkflowTeams": "Workflow teams management",
+    "Permission:WorkflowTeams.ManagePermissions": "Manage permissions",
+
+    "Permission:WorkflowGroups": "Workflow groups management",
+    "Permission:GlobalCodes": "Global codes management",
+    "Permission:Settings": "Settings management",
+    "Permission:Settings.InstanceCleanup": "Instance cleanup"
   }
 }

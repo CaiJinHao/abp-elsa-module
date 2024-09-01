@@ -6,8 +6,8 @@ public class ElsaModuleSettingDefinitionProvider : SettingDefinitionProvider
 {
     public override void Define(ISettingDefinitionContext context)
     {
-        /* Define module settings here.
-         * Use names from ElsaModuleSettings class.
-         */
+        context.Add(new SettingDefinition(ElsaModuleSettings.InstanceCleanup.Enabled, bool.FalseString));
+        context.Add(new SettingDefinition(ElsaModuleSettings.InstanceCleanup.KeepDays, "30"));
+        context.Add(new SettingDefinition(ElsaModuleSettings.InstanceCleanup.Scopes, null));
     }
 }

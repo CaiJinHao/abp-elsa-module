@@ -16,6 +16,7 @@ public class ElsaModulePermissionDefinitionProvider : PermissionDefinitionProvid
         instancePermission.AddChild(ElsaModulePermissions.Instances.Statistic, L("Permission:Instance.Statistic"));
         instancePermission.AddChild(ElsaModulePermissions.Instances.Data, L("Permission:Instance.Data"));
         instancePermission.AddChild(ElsaModulePermissions.Instances.Delete, L("Permission:Delete"));
+        instancePermission.AddChild(ElsaModulePermissions.Instances.Cleanup, L("Permission:Instance.Cleanup"));
 
         var definitionPermission = myGroup.AddPermission(ElsaModulePermissions.Definitions.Default, L("Permission:Definition"));
         definitionPermission.AddChild(ElsaModulePermissions.Definitions.CreateOrUpdateOrPublish, L("Permission:Definition.Publish"));
@@ -45,6 +46,9 @@ public class ElsaModulePermissionDefinitionProvider : PermissionDefinitionProvid
         globalCodes.AddChild(ElsaModulePermissions.GlobalCodes.Create, L("Permission:Create"));
         globalCodes.AddChild(ElsaModulePermissions.GlobalCodes.Update, L("Permission:Update"));
         globalCodes.AddChild(ElsaModulePermissions.GlobalCodes.Delete, L("Permission:Delete"));
+
+        var settings = myGroup.AddPermission(ElsaModulePermissions.Settings.Default, L("Permission:Settings"));
+        settings.AddChild(ElsaModulePermissions.Settings.InstanceCleanup, L("Permission:Settings.InstanceCleanup"));
     }
 
     private static LocalizableString L(string name)

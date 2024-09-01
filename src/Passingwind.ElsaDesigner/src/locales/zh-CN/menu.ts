@@ -64,6 +64,7 @@ export default {
     'menu.Workflows.GlobalCode': '代码块',
     'menu.Workflows.GlobalCode.create': '创建',
     'menu.Workflows.GlobalCode.edit': '修改',
+    'menu.Workflows.Settings': '设置',
     'menu.Change Password': '修改密码',
     'menu.system': '系统',
     'menu.system.users': '用户',

@@ -18,6 +18,7 @@ public class ElsaModulePermissions
         public const string Delete = Default + ".Delete";
         public const string Data = Default + ".Data";
         public const string Statistic = Default + ".Statistics";
+        public const string Cleanup = Default + ".Cleanup";
     }
 
     public static class Definitions
@@ -29,6 +30,12 @@ public class ElsaModulePermissions
         public const string Export = Default + ".Export";
         public const string Import = Default + ".Import";
         public const string ManagePermissions = Default + ".ManagePermissions";
+    }
+
+    public static class Settings
+    {
+        public const string Default = GroupName + ".Settings";
+        public const string InstanceCleanup = Default + ".InstanceCleanup";
     }
 
     public static class GlobalVariables

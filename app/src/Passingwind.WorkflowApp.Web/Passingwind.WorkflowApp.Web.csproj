@@ -17,15 +17,15 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="8.0.*" />
-    <PackageReference Include="Hangfire.Core" Version="1.8.6" />
-    <PackageReference Include="Hangfire.MemoryStorage" Version="1.8.0" />
+    <!--<PackageReference Include="Hangfire.Core" Version="1.8.14" />-->
+    <PackageReference Include="Hangfire.MemoryStorage" Version="1.8.1.1" />
     <PackageReference Include="Hangfire.Redis.StackExchange" Version="1.9.3" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.*" />
     <PackageReference Include="Microsoft.AspNetCore.DataProtection.StackExchangeRedis" Version="8.0.*" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.*" />
-    <PackageReference Include="DistributedLock.FileSystem" Version="1.0.1" />
-    <PackageReference Include="DistributedLock.Redis" Version="1.0.2" />
-    <PackageReference Include="NLog.Web.AspNetCore" Version="5.3.8" />
+    <PackageReference Include="DistributedLock.FileSystem" Version="1.0.2" />
+    <PackageReference Include="DistributedLock.Redis" Version="1.0.3" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="5.3.12" />
     <PackageReference Include="Owl.Abp.CultureMap" Version="7.0.0" />
     <PackageReference Include="Passingwind.SwaggerExtensions" Version="0.5.0" />
   </ItemGroup>

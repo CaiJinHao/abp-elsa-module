@@ -50,6 +50,7 @@ public class WorkflowAppDbContext :
     public DbSet<IdentitySecurityLog> SecurityLogs { get; set; }
     public DbSet<IdentityLinkUser> LinkUsers { get; set; }
     public DbSet<IdentityUserDelegation> UserDelegations { get; set; }
+    public DbSet<IdentitySession> Sessions { get; }
 
     /// <summary>
     /// Tenant Management
@@ -60,6 +61,7 @@ public class WorkflowAppDbContext :
     #endregion Entities from the modules
 
     public DbSet<ApiKey> ApiKeys { get; set; }
+
 
     public WorkflowAppDbContext(DbContextOptions<WorkflowAppDbContext> options)
         : base(options)

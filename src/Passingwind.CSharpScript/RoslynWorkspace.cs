@@ -12,7 +12,6 @@ public class RoslynWorkspace : Workspace
     public RoslynWorkspace(HostServices hostServices, string workspaceKind = WorkspaceKind.Host)
         : base(hostServices, workspaceKind)
     {
-        DiagnosticProvider.Enable(this);
     }
 
     public new void SetCurrentSolution(Solution solution)
@@ -47,8 +46,6 @@ public class RoslynWorkspace : Workspace
         base.Dispose(finalize);
 
         ApplyingTextChange = null;
-
-        DiagnosticProvider.Disable(this);
     }
 
     protected override void ApplyDocumentTextChanged(DocumentId id, SourceText text)

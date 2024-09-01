@@ -1,0 +1,50 @@
+name: build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/cache@v4
+        with:
+          path: ${{github.workspace}}/src/Passingwind.ElsaDesigner/node_modules
+          key: ${{ runner.os }}-yarn-cache
+          restore-keys: |
+            ${{ runner.os }}-node
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            6.0.x
+            7.0.x
+            8.0.x
+
+      - name: DotNet restore dependencies
+        run: dotnet restore Passingwind.WorkflowApp.sln
+
+      - name: DotNet build
+        run: dotnet build --no-restore -c Release Passingwind.WorkflowApp.sln
+
+      # - name: DotNet test
+      #   run: dotnet test
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "16"
+
+      - name: node yarn
+        run: |
+          cd ./src/Passingwind.ElsaDesigner
+          yarn
+
+      - name: npm build
+        run: |
+          cd ./src/Passingwind.ElsaDesigner
+          npm run build

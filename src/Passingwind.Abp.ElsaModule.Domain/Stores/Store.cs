@@ -120,6 +120,10 @@ public abstract class Store<TModel, TEntity, TKey> : ITransientDependency where 
 
     public virtual async Task<TModel> FindAsync(ISpecification<TModel> specification, CancellationToken cancellationToken = default)
     {
+        //TODO：查找前存在没有保存的事务，导致查询不到实例
+        using var uow = UnitOfWork.Begin(requiresNew: true);
+        await uow.SaveChangesAsync(cancellationToken);
+
         var expression = await MapSpecificationAsync(specification);
         var entity = await Repository.FindAsync(expression, true, cancellationToken);
 
@@ -140,7 +144,7 @@ public abstract class Store<TModel, TEntity, TKey> : ITransientDependency where 
 
         query = query.Where(filter);
 
-        // TODO orderBy  
+        // TODO orderBy
         //if (orderBy != null)
         //{
         //var orderByExp = orderBy.OrderByExpression.ConvertType<TModel, TEntity>();

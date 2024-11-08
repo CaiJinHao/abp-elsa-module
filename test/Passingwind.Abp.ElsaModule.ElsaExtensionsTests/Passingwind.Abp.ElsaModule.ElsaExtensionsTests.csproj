@@ -1,17 +1,14 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-    <Import Project="..\..\common.props" />
-
-    <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
-        <RootNamespace>Passingwind.Abp.ElsaModule</RootNamespace>
-    </PropertyGroup>
- 
-    <ItemGroup>
-        <ProjectReference Include="..\..\src\Passingwind.Abp.ElsaModule.Application\Passingwind.Abp.ElsaModule.Application.csproj" />
-        <ProjectReference Include="..\..\src\Passingwind.Abp.ElsaModule.ElsaExtensions\Passingwind.Abp.ElsaModule.ElsaExtensions.csproj" />
-        <ProjectReference Include="..\..\src\Passingwind.CSharpScript\Passingwind.CSharpScriptEngine.csproj" /> 
-        <ProjectReference Include="..\Passingwind.Abp.ElsaModule.Domain.Tests\Passingwind.Abp.ElsaModule.Domain.Tests.csproj" />
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.0" />
-    </ItemGroup>
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\common.props" />
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Passingwind.Abp.ElsaModule</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Passingwind.Abp.ElsaModule.Application\Passingwind.Abp.ElsaModule.Application.csproj" />
+    <ProjectReference Include="..\..\src\Passingwind.Abp.ElsaModule.ElsaExtensions\Passingwind.Abp.ElsaModule.ElsaExtensions.csproj" />
+    <ProjectReference Include="..\..\src\Passingwind.CSharpScript\Passingwind.CSharpScriptEngine.csproj" />
+    <ProjectReference Include="..\Passingwind.Abp.ElsaModule.Domain.Tests\Passingwind.Abp.ElsaModule.Domain.Tests.csproj" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.0" />
+  </ItemGroup>
 </Project>

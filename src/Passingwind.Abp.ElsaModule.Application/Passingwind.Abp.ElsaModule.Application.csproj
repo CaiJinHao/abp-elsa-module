@@ -1,22 +1,17 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\..\common.props" />
-
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>Passingwind.Abp.ElsaModule</RootNamespace>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.AutoMapper" Version="$(AbpVersion)" />
-    <PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
-    <PackageReference Include="Volo.Abp.Caching" Version="$(AbpVersion)" />
-    <PackageReference Include="Volo.Abp.Authorization.Abstractions" Version="$(AbpVersion)" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.AutoMapper/Volo.Abp.AutoMapper.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.Ddd.Application/Volo.Abp.Ddd.Application.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.Caching/Volo.Abp.Caching.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.Authorization.Abstractions/Volo.Abp.Authorization.Abstractions.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Passingwind.Abp.ElsaModule.Application.Contracts\Passingwind.Abp.ElsaModule.Application.Contracts.csproj" />
     <ProjectReference Include="..\Passingwind.Abp.ElsaModule.Domain\Passingwind.Abp.ElsaModule.Domain.csproj" />
   </ItemGroup>
-
 </Project>

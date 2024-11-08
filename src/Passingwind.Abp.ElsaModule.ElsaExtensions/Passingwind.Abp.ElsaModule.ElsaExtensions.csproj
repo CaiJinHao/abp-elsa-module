@@ -1,17 +1,14 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\..\common.props" />
-
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>Passingwind.Abp.ElsaModule</RootNamespace>  
+    <RootNamespace>Passingwind.Abp.ElsaModule</RootNamespace>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="8.0.*" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
     <PackageReference Include="IdentityModel" Version="6.2.0" />
   </ItemGroup>
-
   <!--<Target Name="GetLibReferences" AfterTargets="ResolveFrameworkReferences">
         <MSBuild Projects="@(ProjectReference)" Targets="GetLibReferences">
             <Output ItemName="LibReference" TaskParameter="TargetOutputs" />
@@ -21,31 +18,26 @@
             <Content Include="@(LibReference)" PackagePath="lib/$(TargetFramework)" Pack="true" />
         </ItemGroup>
     </Target>-->
-
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.EventBus" Version="$(AbpVersion)" />
-    <PackageReference Include="Volo.Abp.Emailing" Version="$(AbpVersion)" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.EventBus/Volo.Abp.EventBus.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.Emailing/Volo.Abp.Emailing.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.AspNetCore.Mvc/Volo.Abp.AspNetCore.Mvc.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Elsa.Core" Version="$(ElsaVersion)" />
     <PackageReference Include="Elsa.Activities.Email" Version="$(ElsaVersion)" />
     <PackageReference Include="Elsa.Activities.Http" Version="$(ElsaVersion)" />
     <PackageReference Include="Elsa.Activities.Temporal.Common" Version="$(ElsaVersion)" />
   </ItemGroup>
- 
   <ItemGroup>
     <PackageReference Include="Teronis.MSBuild.Packaging.ProjectBuildInPackage" Version="1.0.0" Condition=" $(Configuration) == 'Release' " PrivateAssets="all" IncludeAssets="runtime; build; native; contentfiles; analyzers" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Passingwind.Abp.ElsaModule.Domain\Passingwind.Abp.ElsaModule.Domain.csproj" />
     <ProjectReference Include="..\Passingwind.CSharpScript\Passingwind.CSharpScriptEngine.csproj">
       <PrivateAssets>all</PrivateAssets>
     </ProjectReference>
   </ItemGroup>
- 
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.11.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Features" Version="4.11.0" />
@@ -58,7 +50,6 @@
     <PackageReference Include="Basic.Reference.Assemblies.Net80" Version="1.7.8" />
     <PackageReference Include="IgnoresAccessChecksToGenerator" Version="0.7.0" PrivateAssets="all" />
   </ItemGroup>
-  
   <ItemGroup>
     <InternalsAssemblyName Include="Microsoft.CodeAnalysis.CSharp" />
     <InternalsAssemblyName Include="Microsoft.CodeAnalysis.Features" />
@@ -70,5 +61,4 @@
     <InternalsAssemblyName Include="Microsoft.CodeAnalysis.CSharp.Workspaces" />
     <InternalsAssemblyName Include="Microsoft.CodeAnalysis.LanguageServer.Protocol" />
   </ItemGroup>
- 
 </Project>

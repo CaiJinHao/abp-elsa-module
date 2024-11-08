@@ -1,20 +1,15 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\..\common.props" />
-
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>Passingwind.WorkflowApp</RootNamespace>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\src\Passingwind.WorkflowApp.EntityFrameworkCore\Passingwind.WorkflowApp.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\Passingwind.WorkflowApp.TestBase\Passingwind.WorkflowApp.TestBase.csproj" />
-    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="7.2.3" />
+    <ProjectReference Include="../../../../abp/framework/src/Volo.Abp.EntityFrameworkCore.Sqlite/Volo.Abp.EntityFrameworkCore.Sqlite.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
   </ItemGroup>
-
 </Project>

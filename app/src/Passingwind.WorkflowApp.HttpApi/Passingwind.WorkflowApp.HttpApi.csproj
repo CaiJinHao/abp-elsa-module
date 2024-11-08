@@ -1,22 +1,17 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-    <Import Project="..\..\common.props" />
-
-    <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
-        <RootNamespace>Passingwind.WorkflowApp</RootNamespace>
-    </PropertyGroup>
-
-    <ItemGroup>
-        <ProjectReference Include="..\..\..\src\Passingwind.Abp.ElsaModule.HttpApi\Passingwind.Abp.ElsaModule.HttpApi.csproj" />
-        <ProjectReference Include="..\Passingwind.WorkflowApp.Application.Contracts\Passingwind.WorkflowApp.Application.Contracts.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <PackageReference Include="Volo.Abp.Account.HttpApi" Version="$(AbpVersion)" />
-        <PackageReference Include="Volo.Abp.Identity.HttpApi" Version="$(AbpVersion)" />
-        <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi" Version="$(AbpVersion)" /> 
-        <PackageReference Include="Volo.Abp.SettingManagement.HttpApi" Version="$(AbpVersion)" />
-    </ItemGroup>
-
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\common.props" />
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Passingwind.WorkflowApp</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Passingwind.Abp.ElsaModule.HttpApi\Passingwind.Abp.ElsaModule.HttpApi.csproj" />
+    <ProjectReference Include="..\Passingwind.WorkflowApp.Application.Contracts\Passingwind.WorkflowApp.Application.Contracts.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../../../abp/modules/account/src/Volo.Abp.Account.HttpApi/Volo.Abp.Account.HttpApi.csproj" />
+    <ProjectReference Include="../../../../abp/modules/identity/src/Volo.Abp.Identity.HttpApi/Volo.Abp.Identity.HttpApi.csproj" />
+    <ProjectReference Include="../../../../abp/modules/permission-management/src/Volo.Abp.PermissionManagement.HttpApi/Volo.Abp.PermissionManagement.HttpApi.csproj" />
+    <ProjectReference Include="../../../../abp/modules/setting-management/src/Volo.Abp.SettingManagement.HttpApi/Volo.Abp.SettingManagement.HttpApi.csproj" />
+  </ItemGroup>
 </Project>

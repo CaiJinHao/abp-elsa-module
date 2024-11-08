@@ -1,22 +1,17 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-    <Import Project="..\..\common.props" />
-
-    <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
-        <RootNamespace>Passingwind.Abp.ElsaModule</RootNamespace>
-    </PropertyGroup>
-  
-    <ItemGroup>
-        <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" /> 
-        <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="$(AbpVersion)" />
-        <PackageReference Include="Volo.Abp.Authorization" Version="$(AbpVersion)" />
-        <PackageReference Include="Volo.Abp.Identity.Application.Contracts" Version="$(AbpVersion)" />
-        <ProjectReference Include="..\Passingwind.Abp.ElsaModule.Domain.Shared\Passingwind.Abp.ElsaModule.Domain.Shared.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <PackageReference Include="Elsa.Abstractions" Version="$(ElsaVersion)" />
-    </ItemGroup>
-
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\common.props" />
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>Passingwind.Abp.ElsaModule</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <ProjectReference Include="..\Passingwind.Abp.ElsaModule.Domain.Shared\Passingwind.Abp.ElsaModule.Domain.Shared.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.Ddd.Application.Contracts/Volo.Abp.Ddd.Application.Contracts.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.Authorization/Volo.Abp.Authorization.csproj" />
+    <ProjectReference Include="../../../abp/modules/identity/src/Volo.Abp.Identity.Application.Contracts/Volo.Abp.Identity.Application.Contracts.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Elsa.Abstractions" Version="$(ElsaVersion)" />
+  </ItemGroup>
 </Project>

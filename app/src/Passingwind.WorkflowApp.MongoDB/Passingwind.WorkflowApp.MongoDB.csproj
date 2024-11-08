@@ -1,25 +1,20 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-    <Import Project="..\..\common.props" />
-
-    <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
-        <RootNamespace>Passingwind.WorkflowApp</RootNamespace>
-    </PropertyGroup>
-
-    <ItemGroup>
-        <ProjectReference Include="..\..\..\src\Passingwind.Abp.ElsaModule.MongoDB\Passingwind.Abp.ElsaModule.MongoDB.csproj" />
-        <ProjectReference Include="..\Passingwind.WorkflowApp.Domain\Passingwind.WorkflowApp.Domain.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <PackageReference Include="Volo.Abp.PermissionManagement.MongoDB" Version="$(AbpVersion)" />
-        <PackageReference Include="Volo.Abp.SettingManagement.MongoDB" Version="$(AbpVersion)" />
-        <PackageReference Include="Volo.Abp.Identity.MongoDB" Version="$(AbpVersion)" />
-        <PackageReference Include="Volo.Abp.BackgroundJobs.MongoDB" Version="$(AbpVersion)" />
-        <PackageReference Include="Volo.Abp.AuditLogging.MongoDB" Version="$(AbpVersion)" />
-        <PackageReference Include="Volo.Abp.TenantManagement.MongoDB" Version="$(AbpVersion)" />
-        <PackageReference Include="Volo.Abp.FeatureManagement.MongoDB" Version="$(AbpVersion)" />
-    </ItemGroup>
-
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\common.props" />
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Passingwind.WorkflowApp</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Passingwind.Abp.ElsaModule.MongoDB\Passingwind.Abp.ElsaModule.MongoDB.csproj" />
+    <ProjectReference Include="..\Passingwind.WorkflowApp.Domain\Passingwind.WorkflowApp.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../../../abp/modules/permission-management/src/Volo.Abp.PermissionManagement.MongoDB/Volo.Abp.PermissionManagement.MongoDB.csproj" />
+    <ProjectReference Include="../../../../abp/modules/setting-management/src/Volo.Abp.SettingManagement.MongoDB/Volo.Abp.SettingManagement.MongoDB.csproj" />
+    <ProjectReference Include="../../../../abp/modules/identity/src/Volo.Abp.Identity.MongoDB/Volo.Abp.Identity.MongoDB.csproj" />
+    <ProjectReference Include="../../../../abp/modules/background-jobs/src/Volo.Abp.BackgroundJobs.MongoDB/Volo.Abp.BackgroundJobs.MongoDB.csproj" />
+    <ProjectReference Include="../../../../abp/modules/audit-logging/src/Volo.Abp.AuditLogging.MongoDB/Volo.Abp.AuditLogging.MongoDB.csproj" />
+    <ProjectReference Include="../../../../abp/modules/tenant-management/src/Volo.Abp.TenantManagement.MongoDB/Volo.Abp.TenantManagement.MongoDB.csproj" />
+    <ProjectReference Include="../../../../abp/modules/feature-management/src/Volo.Abp.FeatureManagement.MongoDB/Volo.Abp.FeatureManagement.MongoDB.csproj" />
+  </ItemGroup>
 </Project>

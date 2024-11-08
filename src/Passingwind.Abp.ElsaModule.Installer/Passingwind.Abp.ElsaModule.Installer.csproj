@@ -1,21 +1,16 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-    <Import Project="..\..\common.props" />
-
-    <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
-        <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
-        <RootNamespace>Passingwind.Abp.ElsaModule</RootNamespace>
-        <IsPackable>false</IsPackable>
-    </PropertyGroup>
-
-    <ItemGroup>
-        <PackageReference Include="Volo.Abp.VirtualFileSystem" Version="$(AbpVersion)" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <None Remove="..\..\Passingwind.Abp.ElsaModule.abpmdl.json" />
-        <EmbeddedResource Include="..\..\Passingwind.Abp.ElsaModule.abpmdl.json" />
-    </ItemGroup>
-
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\common.props" />
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+    <RootNamespace>Passingwind.Abp.ElsaModule</RootNamespace>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.VirtualFileSystem/Volo.Abp.VirtualFileSystem.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="..\..\Passingwind.Abp.ElsaModule.abpmdl.json" />
+    <EmbeddedResource Include="..\..\Passingwind.Abp.ElsaModule.abpmdl.json" />
+  </ItemGroup>
 </Project>

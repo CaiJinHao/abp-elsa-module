@@ -1,21 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <Import Project="..\..\common.props" />
-
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>Passingwind.Abp.ElsaModule</RootNamespace>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="$(AbpVersion)" />
-    <PackageReference Include="Volo.Abp.PermissionManagement.EntityFrameworkCore" Version="$(AbpVersion)" />
     <ProjectReference Include="..\Passingwind.Abp.ElsaModule.Domain\Passingwind.Abp.ElsaModule.Domain.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.EntityFrameworkCore/Volo.Abp.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="../../../abp/modules/permission-management/src/Volo.Abp.PermissionManagement.EntityFrameworkCore/Volo.Abp.PermissionManagement.EntityFrameworkCore.csproj" />
   </ItemGroup>
-
-    <ItemGroup>
-        <PackageReference Include="Elsa.Abstractions" Version="$(ElsaVersion)" />
-        <PackageReference Include="NodaTime.Serialization.SystemTextJson" Version="1.2.0" />
-    </ItemGroup>
-
+  <ItemGroup>
+    <PackageReference Include="Elsa.Abstractions" Version="$(ElsaVersion)" />
+    <PackageReference Include="NodaTime.Serialization.SystemTextJson" Version="1.2.0" />
+  </ItemGroup>
 </Project>

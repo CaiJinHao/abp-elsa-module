@@ -1,15 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\..\common.props" />
-
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>Passingwind.Abp.ElsaModule</RootNamespace>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="$(AbpVersion)" />
     <ProjectReference Include="..\Passingwind.Abp.ElsaModule.Application.Contracts\Passingwind.Abp.ElsaModule.Application.Contracts.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.AspNetCore.Mvc/Volo.Abp.AspNetCore.Mvc.csproj" />
   </ItemGroup>
-
 </Project>

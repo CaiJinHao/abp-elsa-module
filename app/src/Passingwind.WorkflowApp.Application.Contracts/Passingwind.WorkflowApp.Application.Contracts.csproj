@@ -1,22 +1,17 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-    <Import Project="..\..\common.props" />
-
-    <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <RootNamespace>Passingwind.WorkflowApp</RootNamespace>
-    </PropertyGroup>
-
-    <ItemGroup>
-        <ProjectReference Include="..\Passingwind.WorkflowApp.Domain.Shared\Passingwind.WorkflowApp.Domain.Shared.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <PackageReference Include="Volo.Abp.ObjectExtending" Version="$(AbpVersion)" />
-        <PackageReference Include="Volo.Abp.Account.Application.Contracts" Version="$(AbpVersion)" />
-        <PackageReference Include="Volo.Abp.Identity.Application.Contracts" Version="$(AbpVersion)" />
-        <PackageReference Include="Volo.Abp.PermissionManagement.Application.Contracts" Version="$(AbpVersion)" />
-        <PackageReference Include="Volo.Abp.SettingManagement.Application.Contracts" Version="$(AbpVersion)" />
-    </ItemGroup>
-
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\common.props" />
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Passingwind.WorkflowApp</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Passingwind.WorkflowApp.Domain.Shared\Passingwind.WorkflowApp.Domain.Shared.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../../../abp/framework/src/Volo.Abp.ObjectExtending/Volo.Abp.ObjectExtending.csproj" />
+    <ProjectReference Include="../../../../abp/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo.Abp.Account.Application.Contracts.csproj" />
+    <ProjectReference Include="../../../../abp/modules/identity/src/Volo.Abp.Identity.Application.Contracts/Volo.Abp.Identity.Application.Contracts.csproj" />
+    <ProjectReference Include="../../../../abp/modules/permission-management/src/Volo.Abp.PermissionManagement.Application.Contracts/Volo.Abp.PermissionManagement.Application.Contracts.csproj" />
+    <ProjectReference Include="../../../../abp/modules/setting-management/src/Volo.Abp.SettingManagement.Application.Contracts/Volo.Abp.SettingManagement.Application.Contracts.csproj" />
+  </ItemGroup>
 </Project>

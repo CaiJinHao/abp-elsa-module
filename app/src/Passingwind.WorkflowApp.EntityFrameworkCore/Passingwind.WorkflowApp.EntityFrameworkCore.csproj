@@ -9,14 +9,14 @@
     <ProjectReference Include="..\Passingwind.WorkflowApp.Domain\Passingwind.WorkflowApp.Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="../../../../abp/framework/src/Volo.Abp.EntityFrameworkCore.SqlServer/Volo.Abp.EntityFrameworkCore.SqlServer.csproj" />
-    <ProjectReference Include="../../../../abp/modules/permission-management/src/Volo.Abp.PermissionManagement.EntityFrameworkCore/Volo.Abp.PermissionManagement.EntityFrameworkCore.csproj" />
-    <ProjectReference Include="../../../../abp/modules/setting-management/src/Volo.Abp.SettingManagement.EntityFrameworkCore/Volo.Abp.SettingManagement.EntityFrameworkCore.csproj" />
-    <ProjectReference Include="../../../../abp/modules/identity/src/Volo.Abp.Identity.EntityFrameworkCore/Volo.Abp.Identity.EntityFrameworkCore.csproj" />
-    <ProjectReference Include="../../../../abp/modules/background-jobs/src/Volo.Abp.BackgroundJobs.EntityFrameworkCore/Volo.Abp.BackgroundJobs.EntityFrameworkCore.csproj" />
-    <ProjectReference Include="../../../../abp/modules/audit-logging/src/Volo.Abp.AuditLogging.EntityFrameworkCore/Volo.Abp.AuditLogging.EntityFrameworkCore.csproj" />
-    <ProjectReference Include="../../../../abp/modules/tenant-management/src/Volo.Abp.TenantManagement.EntityFrameworkCore/Volo.Abp.TenantManagement.EntityFrameworkCore.csproj" />
-    <ProjectReference Include="../../../../abp/modules/feature-management/src/Volo.Abp.FeatureManagement.EntityFrameworkCore/Volo.Abp.FeatureManagement.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="../../../../abp8/framework/src/Volo.Abp.EntityFrameworkCore.SqlServer/Volo.Abp.EntityFrameworkCore.SqlServer.csproj" />
+    <ProjectReference Include="../../../../abp8/modules/permission-management/src/Volo.Abp.PermissionManagement.EntityFrameworkCore/Volo.Abp.PermissionManagement.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="../../../../abp8/modules/setting-management/src/Volo.Abp.SettingManagement.EntityFrameworkCore/Volo.Abp.SettingManagement.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="../../../../abp8/modules/identity/src/Volo.Abp.Identity.EntityFrameworkCore/Volo.Abp.Identity.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="../../../../abp8/modules/background-jobs/src/Volo.Abp.BackgroundJobs.EntityFrameworkCore/Volo.Abp.BackgroundJobs.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="../../../../abp8/modules/audit-logging/src/Volo.Abp.AuditLogging.EntityFrameworkCore/Volo.Abp.AuditLogging.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="../../../../abp8/modules/tenant-management/src/Volo.Abp.TenantManagement.EntityFrameworkCore/Volo.Abp.TenantManagement.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="../../../../abp8/modules/feature-management/src/Volo.Abp.FeatureManagement.EntityFrameworkCore/Volo.Abp.FeatureManagement.EntityFrameworkCore.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.*">

@@ -6,8 +6,8 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Passingwind.Abp.ElsaModule.Domain\Passingwind.Abp.ElsaModule.Domain.csproj" />
-    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.EntityFrameworkCore/Volo.Abp.EntityFrameworkCore.csproj" />
-    <ProjectReference Include="../../../abp/modules/permission-management/src/Volo.Abp.PermissionManagement.EntityFrameworkCore/Volo.Abp.PermissionManagement.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="../../../abp8/framework/src/Volo.Abp.EntityFrameworkCore/Volo.Abp.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="../../../abp8/modules/permission-management/src/Volo.Abp.PermissionManagement.EntityFrameworkCore/Volo.Abp.PermissionManagement.EntityFrameworkCore.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Elsa.Abstractions" Version="$(ElsaVersion)" />

@@ -9,6 +9,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.*" />
     <ProjectReference Include="..\..\src\Passingwind.Abp.ElsaModule.EntityFrameworkCore\Passingwind.Abp.ElsaModule.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\Passingwind.Abp.ElsaModule.TestBase\Passingwind.Abp.ElsaModule.TestBase.csproj" />
-    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.EntityFrameworkCore.Sqlite/Volo.Abp.EntityFrameworkCore.Sqlite.csproj" />
+    <ProjectReference Include="../../../abp8/framework/src/Volo.Abp.EntityFrameworkCore.Sqlite/Volo.Abp.EntityFrameworkCore.Sqlite.csproj" />
   </ItemGroup>
 </Project>

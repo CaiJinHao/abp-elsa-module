@@ -6,7 +6,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Passingwind.Abp.ElsaModule.Domain\Passingwind.Abp.ElsaModule.Domain.csproj" />
-    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.MongoDB/Volo.Abp.MongoDB.csproj" />
-    <ProjectReference Include="../../../abp/modules/permission-management/src/Volo.Abp.PermissionManagement.MongoDB/Volo.Abp.PermissionManagement.MongoDB.csproj" />
+    <ProjectReference Include="../../../abp8/framework/src/Volo.Abp.MongoDB/Volo.Abp.MongoDB.csproj" />
+    <ProjectReference Include="../../../abp8/modules/permission-management/src/Volo.Abp.PermissionManagement.MongoDB/Volo.Abp.PermissionManagement.MongoDB.csproj" />
   </ItemGroup>
 </Project>

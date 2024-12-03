@@ -18,6 +18,7 @@ using Volo.Abp.Application.Dtos;
 using Volo.Abp.Content;
 using Volo.Abp.Identity;
 using Volo.Abp.Json;
+using Volo.Abp.Uow;
 
 namespace Passingwind.Abp.ElsaModule.Common;
 
@@ -34,6 +35,7 @@ public class WorkflowDefinitionAppService : ElsaModuleAppService, IWorkflowDefin
     private readonly IJsonSerializer _jsonSerializer;
     private readonly IWorkflowImporter _workflowImporter;
     private readonly IWorkflowGroupRepository _workflowGroupRepository;
+    protected IUnitOfWorkManager UnitOfWork => LazyServiceProvider.LazyGetRequiredService<IUnitOfWorkManager>();
 
     public WorkflowDefinitionAppService(
         IWorkflowDefinitionRepository workflowDefinitionRepository,

@@ -8,13 +8,13 @@
     <ProjectReference Include="..\Passingwind.Abp.ElsaModule.Domain.Shared\Passingwind.Abp.ElsaModule.Domain.Shared.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="../../../abp8/framework/src/Volo.Abp.Ddd.Domain/Volo.Abp.Ddd.Domain.csproj" />
-    <ProjectReference Include="../../../abp8/framework/src/Volo.Abp.Caching/Volo.Abp.Caching.csproj" />
-    <ProjectReference Include="../../../abp8/modules/permission-management/src/Volo.Abp.PermissionManagement.Domain/Volo.Abp.PermissionManagement.Domain.csproj" />
-    <ProjectReference Include="../../../abp8/modules/identity/src/Volo.Abp.Identity.Domain/Volo.Abp.Identity.Domain.csproj" />
-    <ProjectReference Include="../../../abp8/framework/src/Volo.Abp.DistributedLocking/Volo.Abp.DistributedLocking.csproj" />
-    <ProjectReference Include="../../../abp8/modules/setting-management/src/Volo.Abp.SettingManagement.Domain/Volo.Abp.SettingManagement.Domain.csproj" />
-    <ProjectReference Include="../../../abp8/framework/src/Volo.Abp.BackgroundJobs.Abstractions/Volo.Abp.BackgroundJobs.Abstractions.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.Ddd.Domain/Volo.Abp.Ddd.Domain.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.Caching/Volo.Abp.Caching.csproj" />
+    <ProjectReference Include="../../../abp/modules/permission-management/src/Volo.Abp.PermissionManagement.Domain/Volo.Abp.PermissionManagement.Domain.csproj" />
+    <ProjectReference Include="../../../abp/modules/identity/src/Volo.Abp.Identity.Domain/Volo.Abp.Identity.Domain.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.DistributedLocking/Volo.Abp.DistributedLocking.csproj" />
+    <ProjectReference Include="../../../abp/modules/setting-management/src/Volo.Abp.SettingManagement.Domain/Volo.Abp.SettingManagement.Domain.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.BackgroundJobs.Abstractions/Volo.Abp.BackgroundJobs.Abstractions.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Elsa" Version="$(ElsaVersion)" />

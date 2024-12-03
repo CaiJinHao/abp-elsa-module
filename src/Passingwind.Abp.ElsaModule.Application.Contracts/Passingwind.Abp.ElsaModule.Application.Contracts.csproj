@@ -7,9 +7,9 @@
   <ItemGroup>
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
     <ProjectReference Include="..\Passingwind.Abp.ElsaModule.Domain.Shared\Passingwind.Abp.ElsaModule.Domain.Shared.csproj" />
-    <ProjectReference Include="../../../abp8/framework/src/Volo.Abp.Ddd.Application.Contracts/Volo.Abp.Ddd.Application.Contracts.csproj" />
-    <ProjectReference Include="../../../abp8/framework/src/Volo.Abp.Authorization/Volo.Abp.Authorization.csproj" />
-    <ProjectReference Include="../../../abp8/modules/identity/src/Volo.Abp.Identity.Application.Contracts/Volo.Abp.Identity.Application.Contracts.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.Ddd.Application.Contracts/Volo.Abp.Ddd.Application.Contracts.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.Authorization/Volo.Abp.Authorization.csproj" />
+    <ProjectReference Include="../../../abp/modules/identity/src/Volo.Abp.Identity.Application.Contracts/Volo.Abp.Identity.Application.Contracts.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Elsa.Abstractions" Version="$(ElsaVersion)" />

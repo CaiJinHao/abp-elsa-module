@@ -9,9 +9,9 @@
     <ProjectReference Include="..\Passingwind.WorkflowApp.Application.Contracts\Passingwind.WorkflowApp.Application.Contracts.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="../../../../abp8/modules/account/src/Volo.Abp.Account.HttpApi/Volo.Abp.Account.HttpApi.csproj" />
-    <ProjectReference Include="../../../../abp8/modules/identity/src/Volo.Abp.Identity.HttpApi/Volo.Abp.Identity.HttpApi.csproj" />
-    <ProjectReference Include="../../../../abp8/modules/permission-management/src/Volo.Abp.PermissionManagement.HttpApi/Volo.Abp.PermissionManagement.HttpApi.csproj" />
-    <ProjectReference Include="../../../../abp8/modules/setting-management/src/Volo.Abp.SettingManagement.HttpApi/Volo.Abp.SettingManagement.HttpApi.csproj" />
+    <ProjectReference Include="../../../../abp/modules/account/src/Volo.Abp.Account.HttpApi/Volo.Abp.Account.HttpApi.csproj" />
+    <ProjectReference Include="../../../../abp/modules/identity/src/Volo.Abp.Identity.HttpApi/Volo.Abp.Identity.HttpApi.csproj" />
+    <ProjectReference Include="../../../../abp/modules/permission-management/src/Volo.Abp.PermissionManagement.HttpApi/Volo.Abp.PermissionManagement.HttpApi.csproj" />
+    <ProjectReference Include="../../../../abp/modules/setting-management/src/Volo.Abp.SettingManagement.HttpApi/Volo.Abp.SettingManagement.HttpApi.csproj" />
   </ItemGroup>
 </Project>

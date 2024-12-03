@@ -19,9 +19,9 @@
         </ItemGroup>
     </Target>-->
   <ItemGroup>
-    <ProjectReference Include="../../../abp8/framework/src/Volo.Abp.EventBus/Volo.Abp.EventBus.csproj" />
-    <ProjectReference Include="../../../abp8/framework/src/Volo.Abp.Emailing/Volo.Abp.Emailing.csproj" />
-    <ProjectReference Include="../../../abp8/framework/src/Volo.Abp.AspNetCore.Mvc/Volo.Abp.AspNetCore.Mvc.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.EventBus/Volo.Abp.EventBus.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.Emailing/Volo.Abp.Emailing.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.AspNetCore.Mvc/Volo.Abp.AspNetCore.Mvc.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Elsa.Core" Version="$(ElsaVersion)" />

@@ -5,10 +5,10 @@
     <RootNamespace>Passingwind.Abp.ElsaModule</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="../../../abp8/framework/src/Volo.Abp.AutoMapper/Volo.Abp.AutoMapper.csproj" />
-    <ProjectReference Include="../../../abp8/framework/src/Volo.Abp.Ddd.Application/Volo.Abp.Ddd.Application.csproj" />
-    <ProjectReference Include="../../../abp8/framework/src/Volo.Abp.Caching/Volo.Abp.Caching.csproj" />
-    <ProjectReference Include="../../../abp8/framework/src/Volo.Abp.Authorization.Abstractions/Volo.Abp.Authorization.Abstractions.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.AutoMapper/Volo.Abp.AutoMapper.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.Ddd.Application/Volo.Abp.Ddd.Application.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.Caching/Volo.Abp.Caching.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.Authorization.Abstractions/Volo.Abp.Authorization.Abstractions.csproj" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Passingwind.Abp.ElsaModule.Application.Contracts\Passingwind.Abp.ElsaModule.Application.Contracts.csproj" />

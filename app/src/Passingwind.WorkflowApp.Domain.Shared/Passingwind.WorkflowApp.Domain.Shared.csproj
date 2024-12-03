@@ -6,13 +6,13 @@
     <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="../../../../abp8/modules/identity/src/Volo.Abp.Identity.Domain.Shared/Volo.Abp.Identity.Domain.Shared.csproj" />
-    <ProjectReference Include="../../../../abp8/modules/background-jobs/src/Volo.Abp.BackgroundJobs.Domain.Shared/Volo.Abp.BackgroundJobs.Domain.Shared.csproj" />
-    <ProjectReference Include="../../../../abp8/modules/audit-logging/src/Volo.Abp.AuditLogging.Domain.Shared/Volo.Abp.AuditLogging.Domain.Shared.csproj" />
-    <ProjectReference Include="../../../../abp8/modules/tenant-management/src/Volo.Abp.TenantManagement.Domain.Shared/Volo.Abp.TenantManagement.Domain.Shared.csproj" />
-    <ProjectReference Include="../../../../abp8/modules/feature-management/src/Volo.Abp.FeatureManagement.Domain.Shared/Volo.Abp.FeatureManagement.Domain.Shared.csproj" />
-    <ProjectReference Include="../../../../abp8/modules/permission-management/src/Volo.Abp.PermissionManagement.Domain.Shared/Volo.Abp.PermissionManagement.Domain.Shared.csproj" />
-    <ProjectReference Include="../../../../abp8/modules/setting-management/src/Volo.Abp.SettingManagement.Domain.Shared/Volo.Abp.SettingManagement.Domain.Shared.csproj" />
+    <ProjectReference Include="../../../../abp/modules/identity/src/Volo.Abp.Identity.Domain.Shared/Volo.Abp.Identity.Domain.Shared.csproj" />
+    <ProjectReference Include="../../../../abp/modules/background-jobs/src/Volo.Abp.BackgroundJobs.Domain.Shared/Volo.Abp.BackgroundJobs.Domain.Shared.csproj" />
+    <ProjectReference Include="../../../../abp/modules/audit-logging/src/Volo.Abp.AuditLogging.Domain.Shared/Volo.Abp.AuditLogging.Domain.Shared.csproj" />
+    <ProjectReference Include="../../../../abp/modules/tenant-management/src/Volo.Abp.TenantManagement.Domain.Shared/Volo.Abp.TenantManagement.Domain.Shared.csproj" />
+    <ProjectReference Include="../../../../abp/modules/feature-management/src/Volo.Abp.FeatureManagement.Domain.Shared/Volo.Abp.FeatureManagement.Domain.Shared.csproj" />
+    <ProjectReference Include="../../../../abp/modules/permission-management/src/Volo.Abp.PermissionManagement.Domain.Shared/Volo.Abp.PermissionManagement.Domain.Shared.csproj" />
+    <ProjectReference Include="../../../../abp/modules/setting-management/src/Volo.Abp.SettingManagement.Domain.Shared/Volo.Abp.SettingManagement.Domain.Shared.csproj" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Localization\WorkflowApp\*.json" />

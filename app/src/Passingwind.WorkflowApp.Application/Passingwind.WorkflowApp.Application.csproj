@@ -12,10 +12,10 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.*" />
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <ProjectReference Include="../../../../abp8/modules/account/src/Volo.Abp.Account.Application/Volo.Abp.Account.Application.csproj" />
-    <ProjectReference Include="../../../../abp8/modules/identity/src/Volo.Abp.Identity.Application/Volo.Abp.Identity.Application.csproj" />
-    <ProjectReference Include="../../../../abp8/modules/permission-management/src/Volo.Abp.PermissionManagement.Application/Volo.Abp.PermissionManagement.Application.csproj" />
-    <ProjectReference Include="../../../../abp8/modules/setting-management/src/Volo.Abp.SettingManagement.Application/Volo.Abp.SettingManagement.Application.csproj" />
-    <ProjectReference Include="../../../../abp8/framework/src/Volo.Abp.AspNetCore.Authentication.OpenIdConnect/Volo.Abp.AspNetCore.Authentication.OpenIdConnect.csproj" />
+    <ProjectReference Include="../../../../abp/modules/account/src/Volo.Abp.Account.Application/Volo.Abp.Account.Application.csproj" />
+    <ProjectReference Include="../../../../abp/modules/identity/src/Volo.Abp.Identity.Application/Volo.Abp.Identity.Application.csproj" />
+    <ProjectReference Include="../../../../abp/modules/permission-management/src/Volo.Abp.PermissionManagement.Application/Volo.Abp.PermissionManagement.Application.csproj" />
+    <ProjectReference Include="../../../../abp/modules/setting-management/src/Volo.Abp.SettingManagement.Application/Volo.Abp.SettingManagement.Application.csproj" />
+    <ProjectReference Include="../../../../abp/framework/src/Volo.Abp.AspNetCore.Authentication.OpenIdConnect/Volo.Abp.AspNetCore.Authentication.OpenIdConnect.csproj" />
   </ItemGroup>
 </Project>

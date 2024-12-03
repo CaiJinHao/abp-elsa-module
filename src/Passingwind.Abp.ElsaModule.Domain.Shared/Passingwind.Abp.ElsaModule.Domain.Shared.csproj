@@ -10,7 +10,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="8.0.*" />
     <PackageReference Include="Elsa.Abstractions" Version="$(ElsaVersion)" />
-    <ProjectReference Include="../../../abp8/framework/src/Volo.Abp.Validation/Volo.Abp.Validation.csproj" />
+    <ProjectReference Include="../../../abp/framework/src/Volo.Abp.Validation/Volo.Abp.Validation.csproj" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Localization\ElsaModule\*.json" />

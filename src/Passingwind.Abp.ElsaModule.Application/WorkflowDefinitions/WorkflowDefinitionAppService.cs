@@ -448,6 +448,10 @@ public class WorkflowDefinitionAppService : ElsaModuleAppService, IWorkflowDefin
         if (startableWorkflow == null)
             throw new UserFriendlyException("Cannot start workflow. Maybe it has no starting activities.");
 
+        //TODO：处理存在没有保存的事务，导致查询不到实例问题
+        using var uow = UnitOfWork.Begin(requiresNew: true);
+        await uow.SaveChangesAsync();
+
         var result = await _workflowLaunchpad.DispatchStartableWorkflowAsync(startableWorkflow, new WorkflowInput(input.Input));
 
         return new WorkflowDefinitionDispatchResultDto
